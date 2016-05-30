@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ice.interview</groupId>
+    <artifactId>packet-router</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <!-- <executable>${env.JAVA_HOME_7}/bin/javac</executable> -->
+                    <!-- <fork>true</fork> -->
+                </configuration>
+            </plugin>
+
+            <!--    build a single jar -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>producerconsumer.router.PerformanceTest</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--
+                <configuration>
+                  <mainClass>com.samsung.paas.SedisServerApp</mainClass>
+                  <arguments>
+                    <argument>-properties</argument>
+                    <argument>config/config.properties</argument>
+                  </arguments>
+                </configuration>-->
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+    <dependencies>
+
+        <!-- may be able to author a more lightweight version, but time constraints -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+
+        <!-- fast SPSC and MPMC queues -->
+        <dependency>
+            <groupId>org.jctools</groupId>
+            <artifactId>jctools-core</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- could be interesting -->
+        <!--<dependency>-->
+            <!--<groupId>org.jctools</groupId>-->
+            <!--<artifactId>jctools-experimental</artifactId>-->
+            <!--<version>1.2</version>-->
+        <!--</dependency>-->
+
+        <!-- unit testing -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.8</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- reporting on performance (not used yet) -->
+        <dependency>
+            <groupId>org.hdrhistogram</groupId>
+            <artifactId>HdrHistogram</artifactId>
+            <version>2.1.9</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+
+</project>

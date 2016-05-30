@@ -1,0 +1,323 @@
+/usr/local/java/jdk1.8.0_73/bin/java -server -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -Didea.launcher.port=7537 -Didea.launcher.bin.path=/home/rodierc/idea-IU-145.972.3/bin -Dfile.encoding=UTF-8 -classpath /usr/local/java/jdk1.8.0_73/jre/lib/charsets.jar:/usr/local/java/jdk1.8.0_73/jre/lib/deploy.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/cldrdata.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/dnsns.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/jaccess.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/jfxrt.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/localedata.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/nashorn.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/sunec.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/sunjce_provider.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/sunpkcs11.jar:/usr/local/java/jdk1.8.0_73/jre/lib/ext/zipfs.jar:/usr/local/java/jdk1.8.0_73/jre/lib/javaws.jar:/usr/local/java/jdk1.8.0_73/jre/lib/jce.jar:/usr/local/java/jdk1.8.0_73/jre/lib/jfr.jar:/usr/local/java/jdk1.8.0_73/jre/lib/jfxswt.jar:/usr/local/java/jdk1.8.0_73/jre/lib/jsse.jar:/usr/local/java/jdk1.8.0_73/jre/lib/management-agent.jar:/usr/local/java/jdk1.8.0_73/jre/lib/plugin.jar:/usr/local/java/jdk1.8.0_73/jre/lib/resources.jar:/usr/local/java/jdk1.8.0_73/jre/lib/rt.jar:/home/rodierc/coding/interview-questions/target/test-classes:/home/rodierc/coding/interview-questions/target/classes:/home/rodierc/.m2/repository/com/lmax/disruptor/3.3.4/disruptor-3.3.4.jar:/home/rodierc/.m2/repository/org/jctools/jctools-core/1.2/jctools-core-1.2.jar:/home/rodierc/.m2/repository/org/mockito/mockito-core/1.10.8/mockito-core-1.10.8.jar:/home/rodierc/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/home/rodierc/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/rodierc/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/rodierc/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar:/home/rodierc/idea-IU-145.972.3/lib/idea_rt.jar com.intellij.rt.execution.application.AppMain producerconsumer.router.PerformanceTest
+
+******************   Starting experiments (ETA ten min.) ***********
+
+Distribution details: (Static #) :  3000000, mgmt large: 600000, mgmt: 800000, userLarge: 800000, user: 800000
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 1
+JCTools SPSC w Busy              , read, 1, write, 1, , Runs: 	233.9	113.4	114.3	108.4	106.8	,worst: 	233.9, 	best: 	106.8	, Avg. ms: 135.4
+JCTools SPSC w Locking           , read, 1, write, 1, , Runs: 	266.0	374.4	395.5	398.6	372.4	,worst: 	398.6, 	best: 	266.0	, Avg. ms: 361.4
+Concurrent Busy                  , read, 1, write, 1, , Runs: 	535.2	275.0	259.6	245.7	244.4	,worst: 	535.2, 	best: 	244.4	, Avg. ms: 312.0
+Concurrent Locking               , read, 1, write, 1, , Runs: 	331.1	323.9	319.8	306.9	329.6	,worst: 	331.1, 	best: 	306.9	, Avg. ms: 322.3
+Linked Busy                      , read, 1, write, 1, , Runs: 	386.4	617.3	598.9	636.8	777.2	,worst: 	777.2, 	best: 	386.4	, Avg. ms: 603.3
+Linked Locking                   , read, 1, write, 1, , Runs: 	863.0	860.7	787.6	772.2	630.6	,worst: 	863.0, 	best: 	630.6	, Avg. ms: 782.8
+Priority Queue Java              , read, 1, write, 1, , Runs: 	1517.1	1534.2	1546.6	1585.5	1552.1	,worst: 	1585.5, 	best: 	1517.1	, Avg. ms: 1547.1
+
+WINNER: JCTools SPSC w Busy              , avg time (ms):  135.4, Ops/Sec = 22,162,838.13
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 2
+JCTools MPMC w Busy              , read, 2, write, 1, , Runs: 	183.1	258.0	205.2	254.9	257.1	,worst: 	258.0, 	best: 	183.1	, Avg. ms: 231.7
+JCTools MPMC w Locking           , read, 2, write, 1, , Runs: 	281.6	266.5	311.2	338.4	269.7	,worst: 	338.4, 	best: 	266.5	, Avg. ms: 293.5
+Concurrent Busy                  , read, 2, write, 1, , Runs: 	355.4	349.9	345.7	400.7	340.7	,worst: 	400.7, 	best: 	340.7	, Avg. ms: 358.5
+Concurrent Locking               , read, 2, write, 1, , Runs: 	411.6	420.6	389.3	396.5	409.1	,worst: 	420.6, 	best: 	389.3	, Avg. ms: 405.4
+Linked Busy                      , read, 2, write, 1, , Runs: 	678.3	624.9	562.2	475.6	576.2	,worst: 	678.3, 	best: 	475.6	, Avg. ms: 583.4
+Linked Locking                   , read, 2, write, 1, , Runs: 	626.0	596.6	585.6	581.4	644.4	,worst: 	644.4, 	best: 	581.4	, Avg. ms: 606.8
+Priority Queue Java              , read, 2, write, 1, , Runs: 	2235.4	2127.6	1930.5	2128.9	2210.3	,worst: 	2235.4, 	best: 	1930.5	, Avg. ms: 2126.5
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  231.7, Ops/Sec = 12,949,280.52
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 3
+JCTools MPMC w Busy              , read, 3, write, 1, , Runs: 	299.4	312.3	343.9	223.1	266.3	,worst: 	343.9, 	best: 	223.1	, Avg. ms: 289.0
+JCTools MPMC w Locking           , read, 3, write, 1, , Runs: 	316.6	282.7	311.8	291.4	290.2	,worst: 	316.6, 	best: 	282.7	, Avg. ms: 298.5
+Concurrent Busy                  , read, 3, write, 1, , Runs: 	363.8	400.9	419.4	446.6	442.9	,worst: 	446.6, 	best: 	363.8	, Avg. ms: 414.7
+Concurrent Locking               , read, 3, write, 1, , Runs: 	420.7	404.4	404.7	412.8	420.1	,worst: 	420.7, 	best: 	404.4	, Avg. ms: 412.6
+Linked Busy                      , read, 3, write, 1, , Runs: 	500.9	512.0	516.3	499.5	527.4	,worst: 	527.4, 	best: 	499.5	, Avg. ms: 511.2
+Linked Locking                   , read, 3, write, 1, , Runs: 	854.1	488.3	527.9	587.6	533.9	,worst: 	854.1, 	best: 	488.3	, Avg. ms: 598.3
+Priority Queue Java              , read, 3, write, 1, , Runs: 	2513.5	2600.7	2326.2	2589.6	2589.6	,worst: 	2600.7, 	best: 	2326.2	, Avg. ms: 2523.9
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  289.0, Ops/Sec = 10,380,887.10
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 4
+JCTools MPMC w Busy              , read, 4, write, 1, , Runs: 	244.5	294.6	310.6	234.9	308.2	,worst: 	310.6, 	best: 	234.9	, Avg. ms: 278.6
+JCTools MPMC w Locking           , read, 4, write, 1, , Runs: 	357.9	357.5	339.3	328.9	317.0	,worst: 	357.9, 	best: 	317.0	, Avg. ms: 340.1
+Concurrent Busy                  , read, 4, write, 1, , Runs: 	501.0	437.6	472.3	490.7	474.6	,worst: 	501.0, 	best: 	437.6	, Avg. ms: 475.2
+Concurrent Locking               , read, 4, write, 1, , Runs: 	371.0	358.5	356.8	361.6	371.5	,worst: 	371.5, 	best: 	356.8	, Avg. ms: 363.9
+Linked Busy                      , read, 4, write, 1, , Runs: 	551.1	571.6	507.2	456.9	531.0	,worst: 	571.6, 	best: 	456.9	, Avg. ms: 523.6
+Linked Locking                   , read, 4, write, 1, , Runs: 	612.6	707.3	572.6	526.4	557.1	,worst: 	707.3, 	best: 	526.4	, Avg. ms: 595.2
+Priority Queue Java              , read, 4, write, 1, , Runs: 	2937.5	3010.5	2936.5	3083.3	3080.2	,worst: 	3083.3, 	best: 	2936.5	, Avg. ms: 3009.6
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  278.6, Ops/Sec = 10,768,943.60
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 5
+JCTools MPMC w Busy              , read, 5, write, 1, , Runs: 	371.9	367.6	374.6	319.5	311.0	,worst: 	374.6, 	best: 	311.0	, Avg. ms: 348.9
+JCTools MPMC w Locking           , read, 5, write, 1, , Runs: 	307.7	319.1	343.3	318.4	403.4	,worst: 	403.4, 	best: 	307.7	, Avg. ms: 338.4
+Concurrent Busy                  , read, 5, write, 1, , Runs: 	463.5	500.6	506.9	496.8	483.2	,worst: 	506.9, 	best: 	463.5	, Avg. ms: 490.2
+Concurrent Locking               , read, 5, write, 1, , Runs: 	413.1	385.7	398.5	395.9	412.6	,worst: 	413.1, 	best: 	385.7	, Avg. ms: 401.2
+Linked Busy                      , read, 5, write, 1, , Runs: 	510.7	537.4	508.4	518.4	513.6	,worst: 	537.4, 	best: 	508.4	, Avg. ms: 517.7
+Linked Locking                   , read, 5, write, 1, , Runs: 	552.9	562.7	593.6	514.4	526.4	,worst: 	593.6, 	best: 	514.4	, Avg. ms: 550.0
+Priority Queue Java              , read, 5, write, 1, , Runs: 	2983.6	3008.9	3226.8	3623.0	3583.9	,worst: 	3623.0, 	best: 	2983.6	, Avg. ms: 3285.2
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  338.4, Ops/Sec = 8,865,245.35
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 6
+JCTools MPMC w Busy              , read, 6, write, 1, , Runs: 	409.3	411.2	433.7	411.3	401.3	,worst: 	433.7, 	best: 	401.3	, Avg. ms: 413.4
+JCTools MPMC w Locking           , read, 6, write, 1, , Runs: 	352.6	342.9	347.2	340.6	346.7	,worst: 	352.6, 	best: 	340.6	, Avg. ms: 346.0
+Concurrent Busy                  , read, 6, write, 1, , Runs: 	550.6	502.9	507.3	441.0	506.8	,worst: 	550.6, 	best: 	441.0	, Avg. ms: 501.7
+Concurrent Locking               , read, 6, write, 1, , Runs: 	394.8	398.1	386.1	387.7	386.0	,worst: 	398.1, 	best: 	386.0	, Avg. ms: 390.5
+Linked Busy                      , read, 6, write, 1, , Runs: 	509.1	506.0	518.2	507.9	508.8	,worst: 	518.2, 	best: 	506.0	, Avg. ms: 510.0
+Linked Locking                   , read, 6, write, 1, , Runs: 	575.6	556.3	549.2	584.9	646.8	,worst: 	646.8, 	best: 	549.2	, Avg. ms: 582.5
+Priority Queue Java              , read, 6, write, 1, , Runs: 	3099.6	3558.0	4806.6	4232.7	3865.9	,worst: 	4806.6, 	best: 	3099.6	, Avg. ms: 3912.6
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  346.0, Ops/Sec = 8,670,248.50
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 2
+JCTools MPMC w Busy              , read, 2, write, 2, , Runs: 	311.2	291.5	294.6	292.4	294.3	,worst: 	311.2, 	best: 	291.5	, Avg. ms: 296.8
+JCTools MPMC w Locking           , read, 2, write, 2, , Runs: 	310.4	312.0	323.2	316.4	314.5	,worst: 	323.2, 	best: 	310.4	, Avg. ms: 315.3
+Concurrent Busy                  , read, 2, write, 2, , Runs: 	286.9	323.3	292.1	309.5	316.5	,worst: 	323.3, 	best: 	286.9	, Avg. ms: 305.7
+Concurrent Locking               , read, 2, write, 2, , Runs: 	273.0	346.6	347.7	334.5	271.9	,worst: 	347.7, 	best: 	271.9	, Avg. ms: 314.7
+Linked Busy                      , read, 2, write, 2, , Runs: 	646.4	618.4	805.4	848.9	540.8	,worst: 	848.9, 	best: 	540.8	, Avg. ms: 692.0
+Linked Locking                   , read, 2, write, 2, , Runs: 	475.4	487.2	671.9	686.6	613.4	,worst: 	686.6, 	best: 	475.4	, Avg. ms: 586.9
+Priority Queue Java              , read, 2, write, 2, , Runs: 	4100.8	2613.7	3690.8	3670.5	4707.7	,worst: 	4707.7, 	best: 	2613.7	, Avg. ms: 3756.7
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  296.8, Ops/Sec = 10,108,234.15
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 3
+JCTools MPMC w Busy              , read, 3, write, 3, , Runs: 	267.3	279.6	249.8	220.9	199.0	,worst: 	279.6, 	best: 	199.0	, Avg. ms: 243.3
+JCTools MPMC w Locking           , read, 3, write, 3, , Runs: 	281.7	258.5	248.6	299.9	244.7	,worst: 	299.9, 	best: 	244.7	, Avg. ms: 266.7
+Concurrent Busy                  , read, 3, write, 3, , Runs: 	310.5	281.0	272.7	245.7	279.3	,worst: 	310.5, 	best: 	245.7	, Avg. ms: 277.8
+Concurrent Locking               , read, 3, write, 3, , Runs: 	295.7	279.2	292.2	301.3	313.8	,worst: 	313.8, 	best: 	279.2	, Avg. ms: 296.4
+Linked Busy                      , read, 3, write, 3, , Runs: 	528.7	577.1	591.1	653.2	595.8	,worst: 	653.2, 	best: 	528.7	, Avg. ms: 589.2
+Linked Locking                   , read, 3, write, 3, , Runs: 	616.8	509.0	509.9	564.3	557.7	,worst: 	616.8, 	best: 	509.0	, Avg. ms: 551.5
+Priority Queue Java              , read, 3, write, 3, , Runs: 	4641.7	3185.3	3643.7	4463.8	4306.8	,worst: 	4641.7, 	best: 	3185.3	, Avg. ms: 4048.3
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  243.3, Ops/Sec = 12,330,260.60
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 4
+JCTools MPMC w Busy              , read, 4, write, 4, , Runs: 	268.4	256.2	238.9	254.5	232.2	,worst: 	268.4, 	best: 	232.2	, Avg. ms: 250.1
+JCTools MPMC w Locking           , read, 4, write, 4, , Runs: 	389.9	281.3	258.7	256.0	243.3	,worst: 	389.9, 	best: 	243.3	, Avg. ms: 285.8
+Concurrent Busy                  , read, 4, write, 4, , Runs: 	318.5	431.7	290.9	269.3	364.8	,worst: 	431.7, 	best: 	269.3	, Avg. ms: 335.1
+Concurrent Locking               , read, 4, write, 4, , Runs: 	307.3	330.6	318.8	266.3	296.6	,worst: 	330.6, 	best: 	266.3	, Avg. ms: 303.9
+Linked Busy                      , read, 4, write, 4, , Runs: 	515.9	548.1	541.7	472.5	511.4	,worst: 	548.1, 	best: 	472.5	, Avg. ms: 517.9
+Linked Locking                   , read, 4, write, 4, , Runs: 	586.4	529.9	530.6	552.0	523.3	,worst: 	586.4, 	best: 	523.3	, Avg. ms: 544.4
+Priority Queue Java              , read, 4, write, 4, , Runs: 	3822.3	3919.9	4552.6	4807.3	4167.2	,worst: 	4807.3, 	best: 	3822.3	, Avg. ms: 4253.8
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  250.1, Ops/Sec = 11,996,335.55
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 1
+JCTools MPSC w Busy              , read, 1, write, 2, , Runs: 	214.4	346.7	205.9	170.4	162.8	,worst: 	346.7, 	best: 	162.8	, Avg. ms: 220.1
+JCTOOLS MPSC w Locking           , read, 1, write, 2, , Runs: 	285.3	287.8	278.1	282.1	223.1	,worst: 	287.8, 	best: 	223.1	, Avg. ms: 271.3
+Concurrent Busy                  , read, 1, write, 2, , Runs: 	271.0	337.5	274.8	344.6	227.5	,worst: 	344.6, 	best: 	227.5	, Avg. ms: 291.1
+Concurrent Locking               , read, 1, write, 2, , Runs: 	408.9	328.1	356.3	372.6	376.7	,worst: 	408.9, 	best: 	328.1	, Avg. ms: 368.5
+Linked Busy                      , read, 1, write, 2, , Runs: 	453.0	427.6	509.1	533.0	540.7	,worst: 	540.7, 	best: 	427.6	, Avg. ms: 492.7
+Linked Locking                   , read, 1, write, 2, , Runs: 	557.4	528.1	506.9	494.7	562.8	,worst: 	562.8, 	best: 	494.7	, Avg. ms: 530.0
+Priority Queue Java              , read, 1, write, 2, , Runs: 	4212.1	3792.6	4657.9	4998.4	4870.2	,worst: 	4998.4, 	best: 	3792.6	, Avg. ms: 4506.2
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  220.1, Ops/Sec = 13,633,207.73
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 1
+JCTools MPSC w Busy              , read, 1, write, 3, , Runs: 	221.4	172.4	135.0	148.4	173.9	,worst: 	221.4, 	best: 	135.0	, Avg. ms: 170.2
+JCTOOLS MPSC w Locking           , read, 1, write, 3, , Runs: 	216.0	211.8	213.3	237.5	241.5	,worst: 	241.5, 	best: 	211.8	, Avg. ms: 224.0
+Concurrent Busy                  , read, 1, write, 3, , Runs: 	267.5	212.4	226.5	226.5	221.8	,worst: 	267.5, 	best: 	212.4	, Avg. ms: 230.9
+Concurrent Locking               , read, 1, write, 3, , Runs: 	337.5	292.3	424.5	282.4	268.5	,worst: 	424.5, 	best: 	268.5	, Avg. ms: 321.0
+Linked Busy                      , read, 1, write, 3, , Runs: 	460.6	459.5	460.3	461.5	426.5	,worst: 	461.5, 	best: 	426.5	, Avg. ms: 453.7
+Linked Locking                   , read, 1, write, 3, , Runs: 	484.6	434.2	482.1	513.7	489.9	,worst: 	513.7, 	best: 	434.2	, Avg. ms: 480.9
+Priority Queue Java              , read, 1, write, 3, , Runs: 	4067.2	3438.6	3554.9	3713.6	3704.6	,worst: 	4067.2, 	best: 	3438.6	, Avg. ms: 3695.8
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  170.2, Ops/Sec = 17,623,334.60
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 1
+JCTools MPSC w Busy              , read, 1, write, 4, , Runs: 	193.5	197.6	326.8	211.5	211.1	,worst: 	326.8, 	best: 	193.5	, Avg. ms: 228.1
+JCTOOLS MPSC w Locking           , read, 1, write, 4, , Runs: 	198.9	222.1	212.9	226.2	222.9	,worst: 	226.2, 	best: 	198.9	, Avg. ms: 216.6
+Concurrent Busy                  , read, 1, write, 4, , Runs: 	300.4	268.7	265.6	275.6	281.0	,worst: 	300.4, 	best: 	265.6	, Avg. ms: 278.3
+Concurrent Locking               , read, 1, write, 4, , Runs: 	282.0	298.3	300.5	308.9	329.4	,worst: 	329.4, 	best: 	282.0	, Avg. ms: 303.8
+Linked Busy                      , read, 1, write, 4, , Runs: 	737.5	616.0	492.7	586.5	593.8	,worst: 	737.5, 	best: 	492.7	, Avg. ms: 605.3
+Linked Locking                   , read, 1, write, 4, , Runs: 	704.7	731.2	703.1	689.3	692.1	,worst: 	731.2, 	best: 	689.3	, Avg. ms: 704.1
+Priority Queue Java              , read, 1, write, 4, , Runs: 	3776.2	3896.1	4094.8	3945.6	5308.5	,worst: 	5308.5, 	best: 	3776.2	, Avg. ms: 4204.2
+
+WINNER: JCTOOLS MPSC w Locking           , avg time (ms):  216.6, Ops/Sec = 13,850,747.46
+
+============== STARTING TEST WITH THREAD COUNTS, write: 5, read: 1
+JCTools MPSC w Busy              , read, 1, write, 5, , Runs: 	210.3	282.8	242.8	235.0	212.5	,worst: 	282.8, 	best: 	210.3	, Avg. ms: 236.7
+JCTOOLS MPSC w Locking           , read, 1, write, 5, , Runs: 	230.4	353.4	208.0	243.4	240.1	,worst: 	353.4, 	best: 	208.0	, Avg. ms: 255.1
+Concurrent Busy                  , read, 1, write, 5, , Runs: 	458.4	373.6	732.7	283.8	356.4	,worst: 	732.7, 	best: 	283.8	, Avg. ms: 441.0
+Concurrent Locking               , read, 1, write, 5, , Runs: 	279.0	339.7	422.9	271.5	296.0	,worst: 	422.9, 	best: 	271.5	, Avg. ms: 321.8
+Linked Busy                      , read, 1, write, 5, , Runs: 	422.0	416.2	519.7	376.3	414.7	,worst: 	519.7, 	best: 	376.3	, Avg. ms: 429.8
+Linked Locking                   , read, 1, write, 5, , Runs: 	597.4	609.6	652.2	624.8	642.0	,worst: 	652.2, 	best: 	597.4	, Avg. ms: 625.2
+Priority Queue Java              , read, 1, write, 5, , Runs: 	3815.2	3890.5	3878.5	4173.4	4353.4	,worst: 	4353.4, 	best: 	3815.2	, Avg. ms: 4022.2
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  236.7, Ops/Sec = 12,674,597.17
+
+============== STARTING TEST WITH THREAD COUNTS, write: 6, read: 1
+JCTools MPSC w Busy              , read, 1, write, 6, , Runs: 	201.8	163.1	190.1	173.6	166.4	,worst: 	201.8, 	best: 	163.1	, Avg. ms: 179.0
+JCTOOLS MPSC w Locking           , read, 1, write, 6, , Runs: 	249.9	177.6	207.3	214.2	195.6	,worst: 	249.9, 	best: 	177.6	, Avg. ms: 208.9
+Concurrent Busy                  , read, 1, write, 6, , Runs: 	275.7	319.7	254.2	337.6	285.5	,worst: 	337.6, 	best: 	254.2	, Avg. ms: 294.5
+Concurrent Locking               , read, 1, write, 6, , Runs: 	287.8	289.2	277.7	262.9	292.2	,worst: 	292.2, 	best: 	262.9	, Avg. ms: 282.0
+Linked Busy                      , read, 1, write, 6, , Runs: 	571.0	650.8	583.4	592.4	600.4	,worst: 	650.8, 	best: 	571.0	, Avg. ms: 599.6
+Linked Locking                   , read, 1, write, 6, , Runs: 	656.1	643.9	669.3	669.3	520.8	,worst: 	669.3, 	best: 	520.8	, Avg. ms: 631.9
+Priority Queue Java              , read, 1, write, 6, , Runs: 	3629.7	3640.8	3582.8	3873.4	3923.2	,worst: 	3923.2, 	best: 	3582.8	, Avg. ms: 3730.0
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  179.0, Ops/Sec = 16,758,479.77
+
+Total experiments took (minutes): 7
+
+~~~~~~~~~~~~~  RANDOM:  Starting 13 Random experiments, with five implementations = 65 experiments (ETA ten min.) ***********
+
+Distribution details:(RANDOM #)  :3000000, mgmt large: 1991030, mgmt: 0, userLarge: 0, user: 1008970
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 1
+JCTools SPSC w Busy              , read, 1, write, 1, , Runs: 	109.5	95.4	90.0	92.2	90.4	,worst: 	109.5, 	best: 	90.0	, Avg. ms: 95.5
+JCTools SPSC w Locking           , read, 1, write, 1, , Runs: 	206.5	196.9	203.1	199.9	198.2	,worst: 	206.5, 	best: 	196.9	, Avg. ms: 200.9
+Concurrent Busy                  , read, 1, write, 1, , Runs: 	209.5	302.8	239.5	269.4	203.9	,worst: 	302.8, 	best: 	203.9	, Avg. ms: 245.0
+Concurrent Locking               , read, 1, write, 1, , Runs: 	446.7	338.9	380.5	339.1	349.8	,worst: 	446.7, 	best: 	338.9	, Avg. ms: 371.0
+Linked Busy                      , read, 1, write, 1, , Runs: 	711.5	853.2	876.0	708.0	642.2	,worst: 	876.0, 	best: 	642.2	, Avg. ms: 758.2
+Linked Locking                   , read, 1, write, 1, , Runs: 	792.7	825.7	775.4	781.8	505.3	,worst: 	825.7, 	best: 	505.3	, Avg. ms: 736.2
+Priority Queue Java              , read, 1, write, 1, , Runs: 	1387.9	1611.2	1422.6	1546.0	1436.6	,worst: 	1611.2, 	best: 	1387.9	, Avg. ms: 1480.9
+
+WINNER: JCTools SPSC w Busy              , avg time (ms):  95.5, Ops/Sec = 31,418,532.28
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 2
+JCTools MPMC w Busy              , read, 2, write, 1, , Runs: 	218.3	234.3	236.3	230.2	229.4	,worst: 	236.3, 	best: 	218.3	, Avg. ms: 229.7
+JCTools MPMC w Locking           , read, 2, write, 1, , Runs: 	227.8	307.8	228.2	230.1	309.8	,worst: 	309.8, 	best: 	227.8	, Avg. ms: 260.7
+Concurrent Busy                  , read, 2, write, 1, , Runs: 	287.9	265.1	285.6	277.1	285.8	,worst: 	287.9, 	best: 	265.1	, Avg. ms: 280.3
+Concurrent Locking               , read, 2, write, 1, , Runs: 	392.1	398.6	398.9	397.5	401.9	,worst: 	401.9, 	best: 	392.1	, Avg. ms: 397.8
+Linked Busy                      , read, 2, write, 1, , Runs: 	691.4	698.7	707.6	698.4	694.6	,worst: 	707.6, 	best: 	691.4	, Avg. ms: 698.2
+Linked Locking                   , read, 2, write, 1, , Runs: 	798.4	710.6	644.3	677.0	671.9	,worst: 	798.4, 	best: 	644.3	, Avg. ms: 700.4
+Priority Queue Java              , read, 2, write, 1, , Runs: 	1650.6	1355.5	1592.3	1639.9	1600.6	,worst: 	1650.6, 	best: 	1355.5	, Avg. ms: 1567.8
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  229.7, Ops/Sec = 13,059,427.68
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 3
+JCTools MPMC w Busy              , read, 3, write, 1, , Runs: 	246.2	194.8	251.7	249.9	253.3	,worst: 	253.3, 	best: 	194.8	, Avg. ms: 239.2
+JCTools MPMC w Locking           , read, 3, write, 1, , Runs: 	343.8	260.4	260.6	218.1	265.7	,worst: 	343.8, 	best: 	218.1	, Avg. ms: 269.7
+Concurrent Busy                  , read, 3, write, 1, , Runs: 	506.7	588.3	449.8	598.4	524.9	,worst: 	598.4, 	best: 	449.8	, Avg. ms: 533.6
+Concurrent Locking               , read, 3, write, 1, , Runs: 	375.0	384.0	348.6	374.8	388.4	,worst: 	388.4, 	best: 	348.6	, Avg. ms: 374.2
+Linked Busy                      , read, 3, write, 1, , Runs: 	388.0	401.4	387.6	416.8	431.8	,worst: 	431.8, 	best: 	387.6	, Avg. ms: 405.1
+Linked Locking                   , read, 3, write, 1, , Runs: 	483.3	518.2	608.9	487.9	445.6	,worst: 	608.9, 	best: 	445.6	, Avg. ms: 508.8
+Priority Queue Java              , read, 3, write, 1, , Runs: 	1604.6	1595.1	1652.9	1671.9	2039.8	,worst: 	2039.8, 	best: 	1595.1	, Avg. ms: 1712.9
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  239.2, Ops/Sec = 12,542,529.26
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 4
+JCTools MPMC w Busy              , read, 4, write, 1, , Runs: 	276.5	262.9	298.9	269.5	263.2	,worst: 	298.9, 	best: 	262.9	, Avg. ms: 274.2
+JCTools MPMC w Locking           , read, 4, write, 1, , Runs: 	276.1	256.7	224.2	220.2	296.0	,worst: 	296.0, 	best: 	220.2	, Avg. ms: 254.6
+Concurrent Busy                  , read, 4, write, 1, , Runs: 	657.4	588.9	613.0	552.7	560.5	,worst: 	657.4, 	best: 	552.7	, Avg. ms: 594.5
+Concurrent Locking               , read, 4, write, 1, , Runs: 	344.7	336.7	347.4	351.4	350.3	,worst: 	351.4, 	best: 	336.7	, Avg. ms: 346.1
+Linked Busy                      , read, 4, write, 1, , Runs: 	388.6	387.9	413.9	390.6	406.2	,worst: 	413.9, 	best: 	387.9	, Avg. ms: 397.4
+Linked Locking                   , read, 4, write, 1, , Runs: 	486.0	484.7	596.4	445.8	438.0	,worst: 	596.4, 	best: 	438.0	, Avg. ms: 490.2
+Priority Queue Java              , read, 4, write, 1, , Runs: 	2069.0	2013.2	2535.5	2557.3	2522.5	,worst: 	2557.3, 	best: 	2013.2	, Avg. ms: 2339.5
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  254.6, Ops/Sec = 11,782,008.57
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 5
+JCTools MPMC w Busy              , read, 5, write, 1, , Runs: 	277.0	264.5	301.7	309.9	309.6	,worst: 	309.9, 	best: 	264.5	, Avg. ms: 292.5
+JCTools MPMC w Locking           , read, 5, write, 1, , Runs: 	294.4	293.5	298.4	283.4	309.1	,worst: 	309.1, 	best: 	283.4	, Avg. ms: 295.7
+Concurrent Busy                  , read, 5, write, 1, , Runs: 	627.1	622.3	618.2	607.4	590.0	,worst: 	627.1, 	best: 	590.0	, Avg. ms: 613.0
+Concurrent Locking               , read, 5, write, 1, , Runs: 	326.7	351.5	343.3	349.3	347.4	,worst: 	351.5, 	best: 	326.7	, Avg. ms: 343.6
+Linked Busy                      , read, 5, write, 1, , Runs: 	396.5	389.4	391.3	391.9	389.0	,worst: 	396.5, 	best: 	389.0	, Avg. ms: 391.6
+Linked Locking                   , read, 5, write, 1, , Runs: 	437.0	439.7	666.2	426.9	479.3	,worst: 	666.2, 	best: 	426.9	, Avg. ms: 489.8
+Priority Queue Java              , read, 5, write, 1, , Runs: 	2538.9	2420.7	2487.8	2556.0	3117.5	,worst: 	3117.5, 	best: 	2420.7	, Avg. ms: 2624.2
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  292.5, Ops/Sec = 10,255,328.59
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 6
+JCTools MPMC w Busy              , read, 6, write, 1, , Runs: 	324.1	320.1	322.4	336.7	325.3	,worst: 	336.7, 	best: 	320.1	, Avg. ms: 325.7
+JCTools MPMC w Locking           , read, 6, write, 1, , Runs: 	314.6	342.0	271.6	337.3	331.2	,worst: 	342.0, 	best: 	271.6	, Avg. ms: 319.3
+Concurrent Busy                  , read, 6, write, 1, , Runs: 	628.2	652.1	637.7	630.2	663.3	,worst: 	663.3, 	best: 	628.2	, Avg. ms: 642.3
+Concurrent Locking               , read, 6, write, 1, , Runs: 	346.6	351.4	344.6	353.2	346.4	,worst: 	353.2, 	best: 	344.6	, Avg. ms: 348.4
+Linked Busy                      , read, 6, write, 1, , Runs: 	414.5	415.0	409.1	424.9	415.7	,worst: 	424.9, 	best: 	409.1	, Avg. ms: 415.8
+Linked Locking                   , read, 6, write, 1, , Runs: 	459.6	429.9	444.4	569.3	499.8	,worst: 	569.3, 	best: 	429.9	, Avg. ms: 480.6
+Priority Queue Java              , read, 6, write, 1, , Runs: 	2865.0	3038.8	2859.6	3459.9	4133.3	,worst: 	4133.3, 	best: 	2859.6	, Avg. ms: 3271.3
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  319.3, Ops/Sec = 9,394,192.33
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 2
+JCTools MPMC w Busy              , read, 2, write, 2, , Runs: 	226.2	229.8	229.3	234.9	223.6	,worst: 	234.9, 	best: 	223.6	, Avg. ms: 228.7
+JCTools MPMC w Locking           , read, 2, write, 2, , Runs: 	323.8	305.5	304.1	263.6	313.8	,worst: 	323.8, 	best: 	263.6	, Avg. ms: 302.2
+Concurrent Busy                  , read, 2, write, 2, , Runs: 	310.9	307.8	302.0	325.3	313.6	,worst: 	325.3, 	best: 	302.0	, Avg. ms: 311.9
+Concurrent Locking               , read, 2, write, 2, , Runs: 	381.1	391.0	382.6	362.6	406.6	,worst: 	406.6, 	best: 	362.6	, Avg. ms: 384.8
+Linked Busy                      , read, 2, write, 2, , Runs: 	798.8	830.8	942.1	1006.5	804.2	,worst: 	1006.5, 	best: 	798.8	, Avg. ms: 876.5
+Linked Locking                   , read, 2, write, 2, , Runs: 	831.8	844.5	877.7	877.4	836.1	,worst: 	877.7, 	best: 	831.8	, Avg. ms: 853.5
+Priority Queue Java              , read, 2, write, 2, , Runs: 	2024.0	2109.2	2931.3	2348.6	1843.4	,worst: 	2931.3, 	best: 	1843.4	, Avg. ms: 2251.3
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  228.7, Ops/Sec = 13,115,667.69
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 3
+JCTools MPMC w Busy              , read, 3, write, 3, , Runs: 	246.6	263.4	259.6	214.2	264.4	,worst: 	264.4, 	best: 	214.2	, Avg. ms: 249.6
+JCTools MPMC w Locking           , read, 3, write, 3, , Runs: 	249.6	214.4	258.1	209.4	208.9	,worst: 	258.1, 	best: 	208.9	, Avg. ms: 228.1
+Concurrent Busy                  , read, 3, write, 3, , Runs: 	250.1	349.2	325.8	348.4	349.3	,worst: 	349.3, 	best: 	250.1	, Avg. ms: 324.5
+Concurrent Locking               , read, 3, write, 3, , Runs: 	380.6	381.8	375.4	357.9	379.9	,worst: 	381.8, 	best: 	357.9	, Avg. ms: 375.1
+Linked Busy                      , read, 3, write, 3, , Runs: 	596.1	609.5	553.1	579.0	496.6	,worst: 	609.5, 	best: 	496.6	, Avg. ms: 566.9
+Linked Locking                   , read, 3, write, 3, , Runs: 	777.5	806.2	781.0	751.3	790.5	,worst: 	806.2, 	best: 	751.3	, Avg. ms: 781.3
+Priority Queue Java              , read, 3, write, 3, , Runs: 	3478.0	3710.2	3519.8	2846.6	1944.5	,worst: 	3710.2, 	best: 	1944.5	, Avg. ms: 3099.8
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  228.1, Ops/Sec = 13,153,355.96
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 4
+JCTools MPMC w Busy              , read, 4, write, 4, , Runs: 	253.3	252.0	311.9	250.9	286.9	,worst: 	311.9, 	best: 	250.9	, Avg. ms: 271.0
+JCTools MPMC w Locking           , read, 4, write, 4, , Runs: 	281.6	301.0	250.8	293.8	266.9	,worst: 	301.0, 	best: 	250.8	, Avg. ms: 278.8
+Concurrent Busy                  , read, 4, write, 4, , Runs: 	331.5	338.5	254.9	278.3	330.1	,worst: 	338.5, 	best: 	254.9	, Avg. ms: 306.7
+Concurrent Locking               , read, 4, write, 4, , Runs: 	358.5	365.4	361.0	364.8	365.9	,worst: 	365.9, 	best: 	358.5	, Avg. ms: 363.1
+Linked Busy                      , read, 4, write, 4, , Runs: 	527.8	555.8	592.7	602.1	575.3	,worst: 	602.1, 	best: 	527.8	, Avg. ms: 570.7
+Linked Locking                   , read, 4, write, 4, , Runs: 	718.2	746.4	722.2	764.9	723.3	,worst: 	764.9, 	best: 	718.2	, Avg. ms: 735.0
+Priority Queue Java              , read, 4, write, 4, , Runs: 	3383.2	3868.2	3880.4	1888.9	2370.2	,worst: 	3880.4, 	best: 	1888.9	, Avg. ms: 3078.2
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  271.0, Ops/Sec = 11,069,635.40
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 1
+JCTools MPSC w Busy              , read, 1, write, 2, , Runs: 	176.5	136.3	122.9	130.9	138.2	,worst: 	176.5, 	best: 	122.9	, Avg. ms: 140.9
+JCTOOLS MPSC w Locking           , read, 1, write, 2, , Runs: 	273.2	270.7	275.7	265.6	271.6	,worst: 	275.7, 	best: 	265.6	, Avg. ms: 271.4
+Concurrent Busy                  , read, 1, write, 2, , Runs: 	262.3	249.9	259.9	319.7	248.6	,worst: 	319.7, 	best: 	248.6	, Avg. ms: 268.1
+Concurrent Locking               , read, 1, write, 2, , Runs: 	347.9	351.3	352.5	353.9	354.3	,worst: 	354.3, 	best: 	347.9	, Avg. ms: 352.0
+Linked Busy                      , read, 1, write, 2, , Runs: 	685.2	681.1	515.7	536.1	583.5	,worst: 	685.2, 	best: 	515.7	, Avg. ms: 600.3
+Linked Locking                   , read, 1, write, 2, , Runs: 	834.7	826.9	813.4	832.0	984.3	,worst: 	984.3, 	best: 	813.4	, Avg. ms: 858.3
+Priority Queue Java              , read, 1, write, 2, , Runs: 	3651.0	3571.0	3644.5	4066.9	3780.0	,worst: 	4066.9, 	best: 	3571.0	, Avg. ms: 3742.7
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  140.9, Ops/Sec = 21,284,776.34
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 1
+JCTools MPSC w Busy              , read, 1, write, 3, , Runs: 	165.0	113.2	134.7	131.6	160.6	,worst: 	165.0, 	best: 	113.2	, Avg. ms: 141.0
+JCTOOLS MPSC w Locking           , read, 1, write, 3, , Runs: 	182.2	230.5	239.6	202.3	188.7	,worst: 	239.6, 	best: 	182.2	, Avg. ms: 208.7
+Concurrent Busy                  , read, 1, write, 3, , Runs: 	266.2	271.8	291.3	254.8	311.3	,worst: 	311.3, 	best: 	254.8	, Avg. ms: 279.1
+Concurrent Locking               , read, 1, write, 3, , Runs: 	325.3	324.5	337.5	334.6	277.9	,worst: 	337.5, 	best: 	277.9	, Avg. ms: 319.9
+Linked Busy                      , read, 1, write, 3, , Runs: 	798.4	814.9	819.6	702.0	793.4	,worst: 	819.6, 	best: 	702.0	, Avg. ms: 785.6
+Linked Locking                   , read, 1, write, 3, , Runs: 	924.1	963.7	1004.5	895.8	1041.1	,worst: 	1041.1, 	best: 	895.8	, Avg. ms: 965.9
+Priority Queue Java              , read, 1, write, 3, , Runs: 	3074.6	3849.5	3968.9	3485.9	4143.3	,worst: 	4143.3, 	best: 	3074.6	, Avg. ms: 3704.4
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  141.0, Ops/Sec = 21,272,875.25
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 1
+JCTools MPSC w Busy              , read, 1, write, 4, , Runs: 	182.5	145.8	189.4	206.7	157.8	,worst: 	206.7, 	best: 	145.8	, Avg. ms: 176.4
+JCTOOLS MPSC w Locking           , read, 1, write, 4, , Runs: 	190.0	183.6	189.7	181.4	188.4	,worst: 	190.0, 	best: 	181.4	, Avg. ms: 186.6
+Concurrent Busy                  , read, 1, write, 4, , Runs: 	269.5	293.9	325.4	269.9	275.6	,worst: 	325.4, 	best: 	269.5	, Avg. ms: 286.8
+Concurrent Locking               , read, 1, write, 4, , Runs: 	314.3	400.3	286.0	321.4	281.8	,worst: 	400.3, 	best: 	281.8	, Avg. ms: 320.8
+Linked Busy                      , read, 1, write, 4, , Runs: 	818.3	911.9	963.6	957.0	811.4	,worst: 	963.6, 	best: 	811.4	, Avg. ms: 892.4
+Linked Locking                   , read, 1, write, 4, , Runs: 	843.6	1133.9	1037.9	1093.5	963.9	,worst: 	1133.9, 	best: 	843.6	, Avg. ms: 1014.5
+Priority Queue Java              , read, 1, write, 4, , Runs: 	3476.4	3304.5	3480.4	3424.0	3442.2	,worst: 	3480.4, 	best: 	3304.5	, Avg. ms: 3425.5
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  176.4, Ops/Sec = 17,002,351.27
+
+============== STARTING TEST WITH THREAD COUNTS, write: 5, read: 1
+JCTools MPSC w Busy              , read, 1, write, 5, , Runs: 	170.6	149.1	196.9	185.7	182.7	,worst: 	196.9, 	best: 	149.1	, Avg. ms: 177.0
+JCTOOLS MPSC w Locking           , read, 1, write, 5, , Runs: 	184.3	186.8	189.2	194.1	179.1	,worst: 	194.1, 	best: 	179.1	, Avg. ms: 186.7
+Concurrent Busy                  , read, 1, write, 5, , Runs: 	250.3	254.7	250.9	277.4	263.8	,worst: 	277.4, 	best: 	250.3	, Avg. ms: 259.4
+Concurrent Locking               , read, 1, write, 5, , Runs: 	279.8	305.4	272.5	289.0	303.0	,worst: 	305.4, 	best: 	272.5	, Avg. ms: 289.9
+Linked Busy                      , read, 1, write, 5, , Runs: 	904.7	795.2	781.0	744.0	747.3	,worst: 	904.7, 	best: 	744.0	, Avg. ms: 794.4
+Linked Locking                   , read, 1, write, 5, , Runs: 	980.4	994.4	1066.1	1035.2	833.2	,worst: 	1066.1, 	best: 	833.2	, Avg. ms: 981.8
+Priority Queue Java              , read, 1, write, 5, , Runs: 	3315.1	3116.5	3272.5	3283.7	4255.3	,worst: 	4255.3, 	best: 	3116.5	, Avg. ms: 3448.6
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  177.0, Ops/Sec = 16,946,782.48
+
+============== STARTING TEST WITH THREAD COUNTS, write: 6, read: 1
+JCTools MPSC w Busy              , read, 1, write, 6, , Runs: 	200.6	198.3	198.8	188.0	236.2	,worst: 	236.2, 	best: 	188.0	, Avg. ms: 204.4
+JCTOOLS MPSC w Locking           , read, 1, write, 6, , Runs: 	205.3	202.1	224.9	204.4	217.8	,worst: 	224.9, 	best: 	202.1	, Avg. ms: 210.9
+Concurrent Busy                  , read, 1, write, 6, , Runs: 	284.9	286.3	292.5	369.9	281.1	,worst: 	369.9, 	best: 	281.1	, Avg. ms: 303.0
+Concurrent Locking               , read, 1, write, 6, , Runs: 	314.1	316.4	309.5	313.8	299.2	,worst: 	316.4, 	best: 	299.2	, Avg. ms: 310.6
+Linked Busy                      , read, 1, write, 6, , Runs: 	1142.5	1076.2	1056.0	1071.4	883.1	,worst: 	1142.5, 	best: 	883.1	, Avg. ms: 1045.8
+Linked Locking                   , read, 1, write, 6, , Runs: 	1121.6	1141.4	1188.3	1136.8	1073.4	,worst: 	1188.3, 	best: 	1073.4	, Avg. ms: 1132.3
+Priority Queue Java              , read, 1, write, 6, , Runs: 	3149.3	3283.2	3424.7	3414.5	3386.0	,worst: 	3424.7, 	best: 	3149.3	, Avg. ms: 3331.6
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  204.4, Ops/Sec = 14,677,947.56
+
+Total experiments took (minutes): 6
+
+Process finished with exit code 0
