@@ -95,7 +95,8 @@ public class PerformanceTest {
 
         if (threadRead == 1 && threadWrite == 1) {
             results.add(testManyTimes("Agrona SPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, QueueType.SPSC)));
-            results.add(testManyTimes("JCTools FFBuffer w Busy", numRuns, threadRead, threadWrite, cachedList, new FFBufferPacketRouter(false, QueueType.SPSC)));
+            // FFBuffer is in JCTools Exerimental, must be added to local maven install by building
+            // results.add(testManyTimes("JCTools FFBuffer w Busy", numRuns, threadRead, threadWrite, cachedList, new FFBufferPacketRouter(false, QueueType.SPSC)));
             results.add(testManyTimes("JCTools SPSC w Busy   ", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(false, SPSC)));
             results.add(testManyTimes("JCTools SPSC w Locking", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(true, SPSC)));
         }

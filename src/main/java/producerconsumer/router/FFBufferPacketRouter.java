@@ -1,7 +1,7 @@
 package producerconsumer.router;
 
 
-import org.jctools.queues.FFBuffer;
+// import org.jctools.queues.FFBuffer;
 import producerconsumer.router.wait.BlockingWaitStrategy;
 import producerconsumer.router.wait.BusyWaitStrategy;
 import producerconsumer.router.wait.WaitStrategy;
@@ -48,13 +48,13 @@ public class FFBufferPacketRouter extends QueuePacketRouter implements PacketRou
         }
         @Override
         public Queue<Packet> makeQueue() {
-            if (queue == QueueType.SPSC)
-                return new FFBuffer<>(1 << POWER_OF_TWO);
-            else if (queue == QueueType.MPSC)
-                return new FFBuffer<>(1 << POWER_OF_TWO);
-            else if (queue == QueueType.MPMC)
-                return new FFBuffer<>(1 << POWER_OF_TWO);
-            else
+//            if (queue == QueueType.SPSC)
+//                return new FFBuffer<>(1 << POWER_OF_TWO);
+//            else if (queue == QueueType.MPSC)
+//                return new FFBuffer<>(1 << POWER_OF_TWO);
+//            else if (queue == QueueType.MPMC)
+//                return new FFBuffer<>(1 << POWER_OF_TWO);
+//            else
                 throw new RuntimeException("no queue #: "+queue);
         }
     }
