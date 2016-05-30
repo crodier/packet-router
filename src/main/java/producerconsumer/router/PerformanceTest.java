@@ -37,6 +37,9 @@ public class PerformanceTest {
         runManyExperiments(size, true);
     }
 
+    // TODO:  This should go for one second, and then see how many have been consumed on each reader
+    // that is the best way to get throughput without interfereing with the experiment by counting (or may be slightly better.)
+    // TODO:  If you miss in the Busy Sweep, yielding may give you better performance using Thread.yield(), and could try this.
     private static void runManyExperiments(int size, boolean isRandom) throws InterruptedException {
 
         long start = System.currentTimeMillis();
