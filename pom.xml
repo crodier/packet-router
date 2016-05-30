@@ -91,6 +91,13 @@
             <version>3.3.4</version>
         </dependency>
 
+        <!-- fastest SPSC and MPMC queues -->
+        <dependency>
+            <groupId>org.agrona</groupId>
+            <artifactId>Agrona</artifactId>
+            <version>0.5.1</version>
+        </dependency>
+
         <!-- fast SPSC and MPMC queues -->
         <dependency>
             <groupId>org.jctools</groupId>
@@ -127,6 +134,7 @@
             <version>2.1.9</version>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 
