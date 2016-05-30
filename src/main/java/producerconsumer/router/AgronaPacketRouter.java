@@ -19,6 +19,8 @@ import java.util.Queue;
  */
 public class AgronaPacketRouter extends QueuePacketRouter implements PacketRouter {
 
+    static int POWER_OF_TWO = 23; // 16 million
+
     BusyWaitStrategy busyWaitStrategy = new BusyWaitStrategy(this);
     BlockingWaitStrategy blockingWaitStrategy = new BlockingWaitStrategy(this);
 
@@ -42,8 +44,6 @@ public class AgronaPacketRouter extends QueuePacketRouter implements PacketRoute
      */
     public static class JCToolsFactory implements QueueFactory {
         private final QueueType queue;
-
-        int POWER_OF_TWO = 22; // 8 million
 
         public JCToolsFactory(QueueType qt) {
             this.queue = qt;

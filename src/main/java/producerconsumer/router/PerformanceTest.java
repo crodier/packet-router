@@ -31,7 +31,7 @@ public class PerformanceTest {
         // -XX:+UseG1GC
         // TODO:  Document the JVM used and With and Without G1GC and the CMS Also
 
-        final int size = 1000*1000*3; // move to command line, or pick many sizes in a method
+        final int size = 1000*1000*10; // move to command line, or pick many sizes in a method
 
         runManyExperiments(size, false);
         runManyExperiments(size, true);

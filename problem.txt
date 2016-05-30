@@ -1,0 +1,34 @@
+This should be written in Java and you should use all the practices and techniques you would normally use when building a system.
+There is no need for any kind of user interface for this question. A simple set of classes is fine.
+There is no need for persistence--everything can be done in memory.
+
+Please provide source code that:
+
+1.  Manages packets in a router:
+    a.  Provide a “PacketRouter” class that has at least three public methods. Feel free to include other methods as needed:
+        i.   void add(Packet packet);
+        ii.  Packet take();
+        iii. Packet take(long timeout);
+    b.  The Packet class has at least two public methods. Feel free to include other methods as needed:
+        i.  PacketType getPacketType();
+        ii. boolean isLarge():
+    c.  PacketType is an enum with two values: Management and User
+
+2.  Allows the highest priority packet to be removed from the system:
+    a.  Management has higher priority than User.
+    b.  For packets of the same PacketType, isLarge() being true has higher priority than false.
+    c.  All else being equal, packets that have been in the queue longer should be removed before packets that have not been waiting as long.
+
+3.  Please provide both blocking (if the system is empty it would wait some timeout for a packet to be routed rather
+than returning immediately with no packet) via the PacketRouter’s take(long timeout) method and non-blocking (return null with no packet)
+via the PacketRouter’s take() method.
+
+Please:
+
+1.  Optimize for performance and concurrency.
+2.  Limiting locking as much as possible.
+3.  Consider performance both under congested and uncongested scenarios.
+4.  In the case of concurrent inserts and removes, there is no need to strictly enforce removal ordering
+if doing so improves performance and reduces locking. That is, if the packet being inserted
+at the same time as a removal is of higher priority than any packet currently in queue,
+the algorithm should be implemented to optimize performance even if the new packet must be queued.

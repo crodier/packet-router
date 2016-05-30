@@ -21,6 +21,8 @@ import static producerconsumer.router.JCToolsPacketRouter.QueueType.SPSC;
  */
 public class JCToolsPacketRouter extends QueuePacketRouter implements PacketRouter {
 
+    static int POWER_OF_TWO = 23; // 16 million
+
     public enum QueueType {
         SPSC,
         MPSC,
@@ -50,8 +52,6 @@ public class JCToolsPacketRouter extends QueuePacketRouter implements PacketRout
      */
     public static class JCToolsFactory implements QueueFactory {
         private final QueueType queue;
-
-        int POWER_OF_TWO = 22; // 8 million
 
         public JCToolsFactory(QueueType qt) {
             this.queue = qt;
