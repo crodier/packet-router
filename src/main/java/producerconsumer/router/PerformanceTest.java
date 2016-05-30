@@ -94,19 +94,20 @@ public class PerformanceTest {
         // testManyTimes("INCORRECT baseline", numRuns, threadRead, threadWrite, cachedList, new IncorrectPacketRouter());
 
         if (threadRead == 1 && threadWrite == 1) {
-            results.add(testManyTimes("Agrona SPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, AgronaPacketRouter.QueueType.SPSC)));
+            results.add(testManyTimes("Agrona SPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, QueueType.SPSC)));
+            results.add(testManyTimes("JCTools FFBuffer w Busy", numRuns, threadRead, threadWrite, cachedList, new FFBufferPacketRouter(false, QueueType.SPSC)));
             results.add(testManyTimes("JCTools SPSC w Busy   ", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(false, SPSC)));
             results.add(testManyTimes("JCTools SPSC w Locking", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(true, SPSC)));
         }
         else if (threadRead == 1 && threadWrite > 1){
-            results.add(testManyTimes("Agrona MPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, AgronaPacketRouter.QueueType.MPSC)));
+            results.add(testManyTimes("Agrona MPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, QueueType.MPSC)));
             results.add(testManyTimes("JCTools MPSC w Busy   ", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(false, MPSC)));
             results.add(testManyTimes("JCTOOLS MPSC w Locking", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(true, MPSC)));
         }
         else
         // if (threadWrite == 1 && threadRead > 1) {
         {
-            results.add(testManyTimes("Agrona MPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, AgronaPacketRouter.QueueType.MPMC)));
+            results.add(testManyTimes("Agrona MPSC w Busy", numRuns, threadRead, threadWrite, cachedList, new AgronaPacketRouter(false, QueueType.MPMC)));
             results.add(testManyTimes("JCTools MPMC w Busy   ", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(false, MPMC)));
             results.add(testManyTimes("JCTools MPMC w Locking", numRuns, threadRead, threadWrite, cachedList, new JCToolsPacketRouter(true, MPMC)));
         }

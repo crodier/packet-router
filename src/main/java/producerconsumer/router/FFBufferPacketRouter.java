@@ -1,9 +1,7 @@
 package producerconsumer.router;
 
 
-import org.agrona.concurrent.ManyToManyConcurrentArrayQueue;
-import org.agrona.concurrent.ManyToOneConcurrentArrayQueue;
-import org.agrona.concurrent.OneToOneConcurrentArrayQueue;
+import org.jctools.queues.FFBuffer;
 import producerconsumer.router.wait.BlockingWaitStrategy;
 import producerconsumer.router.wait.BusyWaitStrategy;
 import producerconsumer.router.wait.WaitStrategy;
@@ -17,14 +15,14 @@ import java.util.Queue;
  *
  * From Martin Thomson, finance.
  */
-public class AgronaPacketRouter extends QueuePacketRouter implements PacketRouter {
+public class FFBufferPacketRouter extends QueuePacketRouter implements PacketRouter {
 
     BusyWaitStrategy busyWaitStrategy = new BusyWaitStrategy(this);
     BlockingWaitStrategy blockingWaitStrategy = new BlockingWaitStrategy(this);
 
     boolean isBlocking = false;
 
-    public AgronaPacketRouter(boolean blocking, QueueType queueType) {
+    public FFBufferPacketRouter(boolean blocking, QueueType queueType) {
         super(new JCToolsFactory(queueType));
         isBlocking = blocking;
     }
@@ -51,11 +49,11 @@ public class AgronaPacketRouter extends QueuePacketRouter implements PacketRoute
         @Override
         public Queue<Packet> makeQueue() {
             if (queue == QueueType.SPSC)
-                return new OneToOneConcurrentArrayQueue<>(1 << POWER_OF_TWO);
+                return new FFBuffer<>(1 << POWER_OF_TWO);
             else if (queue == QueueType.MPSC)
-                return new ManyToOneConcurrentArrayQueue<>(1 << POWER_OF_TWO);
+                return new FFBuffer<>(1 << POWER_OF_TWO);
             else if (queue == QueueType.MPMC)
-                return new ManyToManyConcurrentArrayQueue<>(1 << POWER_OF_TWO);
+                return new FFBuffer<>(1 << POWER_OF_TWO);
             else
                 throw new RuntimeException("no queue #: "+queue);
         }

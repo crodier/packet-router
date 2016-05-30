@@ -106,11 +106,11 @@
         </dependency>
 
         <!-- could be interesting -->
-        <!--<dependency>-->
-            <!--<groupId>org.jctools</groupId>-->
-            <!--<artifactId>jctools-experimental</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.jctools</groupId>
+            <artifactId>jctools-experimental</artifactId>
+            <version>1.3-SNAPSHOT</version>
+        </dependency>
 
         <!-- unit testing -->
         <dependency>
