@@ -1,15 +1,33 @@
 # Packet Router Problem
 
-To explore Java Queue performance:
-
 **./runPerfTest.sh**
 
 needs only 'mvn' and java in your path to run
 
-Queues are important for so called 'sequential problems',
+#### Sample results
+[packet-router-perf-test.txt](https://github.com/crodier/packet-router/blob/master/packet-router-perf-test.txt)
 
-These are the most common type of message processing,
+----
+
+This harness explores Java Queue performance,
+with basic priority rules, for four types of messages.
+1.  High Priority:  urgent / normal
+2.  Normal Priority:  urgent / normal
+
+Queues are important for so called 'sequential problems.'
+
+Sequential processing is the most common type of message processing,
 because message 'fairness' is almost always a requirement.
+
+We show the JDK queues are typically hafl the speed, of ring-buffer based
+approaches from two libraries using unsafe and ring-buffers:
+
+- Agrona (Martin Thompson, Aeron)
+- JCTools (Apache)
+
+The JDK ConcurrentLinkedQueue shows it is great for general purpose work,
+as it can outperform in very high concurrency scenarios; however, 
+these are uncommon in practice.
 
 ## Code review
 
@@ -20,9 +38,10 @@ once each with the *Busy Wait* and *Blocking Wait* strategies.
 
 ---
 
-This project performs, Java, concurrent Queue performance evaluations.
+This project performs, Java, concurrent Queue performance evaluations,
+dealing with minor priority differences in the messages.
 
-See the problem:  **problem.txt** (suitable for interviews)
+See the problem:  **[problem.txt](https://github.com/crodier/packet-router/blob/master/problem.txt)** (suitable for interviews)
 
 This problem, explores Java from the perspective of the work of Leslie Lamport, 
 inventor of 'Byzantine Generals' and other concurrent theory:
@@ -57,14 +76,14 @@ but the results are typically stable across machines.
 The winner:  **Agrona**, from Martin Thompson, of Aeron fame
 
 - Agrona is a library used in Aeron, which is reliable messaging over UDP and IPC framework for messaging.
-- Aeron is difficult to use, but can't be beat for latency, and is used in HFT
-- Agrona is a clear producer-consumer winner for ordered message handoff
+    - Aeron is difficult to use, but is the performance champion, and is used in HFT
+- Agrona is a producer-consumer winner for ordered message handoff
 
 ### Summary Findings
 
 - "Agrona", library is the winner:  
     https://github.com/real-logic/Agrona
-- Single Producer, Single Consumer (SPSC), has the highest throughput!  Beating out, using multiple threads.
+- Single Producer, Single Consumer (SPSC), has nearly the highest throughput!  Beating out, using multiple threads.
 - Follow up:  What does Agrona tell us about, Java and our chip speed, for the operations? (how fast is the machine L1/L2, based on this test)
 
 ### More findings
