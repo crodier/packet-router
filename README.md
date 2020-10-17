@@ -5,7 +5,7 @@
 needs only 'mvn' and java in your path to run
 
 #### Sample results
-[packet-router-perf-test.txt](https://github.com/crodier/packet-router/blob/master/packet-router-perf-test.txt)
+[perftest_laptop.txt](https://github.com/crodier/packet-router/blob/master/perftest_laptop.txt)
 
 ----
 
