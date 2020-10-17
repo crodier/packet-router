@@ -19,7 +19,9 @@ import java.util.Queue;
  */
 public class AgronaPacketRouter extends QueuePacketRouter implements PacketRouter {
 
-    static int POWER_OF_TWO = 23; // 16 million
+    // 16 million, as the ring buffer size
+    // may be altered depending on messaging needs, and easily analyzed
+    static int POWER_OF_TWO = 23;
 
     BusyWaitStrategy busyWaitStrategy = new BusyWaitStrategy(this);
     BlockingWaitStrategy blockingWaitStrategy = new BlockingWaitStrategy(this);

@@ -1,6 +1,5 @@
 package producerconsumer.router.wait;
 
-import producerconsumer.router.GetLatestPacket;
 import producerconsumer.router.Packet;
 
 /**

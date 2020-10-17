@@ -99,19 +99,27 @@
         </dependency>
 
         <!-- fast SPSC and MPMC queues -->
-        <dependency>
-            <groupId>org.jctools</groupId>
-            <artifactId>jctools-core</artifactId>
-            <version>1.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jctools</groupId>-->
+<!--            <artifactId>jctools-core</artifactId>-->
+<!--            <version>1.2</version>-->
+<!--        </dependency>-->
 
         <!-- could be interesting -->
         <!-- FFBuffer is closed to Agroana but not as fast -->
+
+        <!-- https://mvnrepository.com/artifact/org.jctools/jctools-core -->
         <dependency>
             <groupId>org.jctools</groupId>
-            <artifactId>jctools-experimental</artifactId>
-            <version>1.3-SNAPSHOT</version>
+            <artifactId>jctools-core</artifactId>
+            <version>3.1.0</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.jctools</groupId>-->
+<!--            <artifactId>jctools-experimental</artifactId>-->
+<!--            <version>1.3-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
         <!-- unit testing -->
         <dependency>

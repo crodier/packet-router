@@ -167,16 +167,18 @@ public class PerformanceTest {
         long worst = 0;
         long best = Long.MAX_VALUE;
 
-        System.out.print(", Runs: ");
-        for (int i= 0; i<numRuns; i++) {
+        System.out.print(", Experiments: ");
+        for (int i = 0; i< numRuns; i++) {
             long time = testPacketRouter(cachedList, pr, threadRead, threadWrite);
             if (time < best) best = time;
             if (time > worst) worst = time;
+            System.out.print(nanosToMs((time))+", ");
             totalNanos += time;
         }
 
         long avg = totalNanos/numRuns;
-        System.out.println("\t,worst: \t"+nanosToMs(worst)+", \tbest: \t"+nanosToMs(best)+"\t, Avg. ms: "+ nanosToMs(avg));
+
+        System.out.println("\t\t,worst: "+nanosToMs(worst)+" \tbest: "+nanosToMs(best)+"\t, Avg. ms: "+ nanosToMs(avg));
 
         return new AvgTimeResult(testName, avg, worst, best);
     }
@@ -257,7 +259,9 @@ public class PerformanceTest {
         }
     }
 
-    private static long testPacketRouter(ArrayList<Packet> cachedPacketList, final PacketRouter pr, int threadRead, int threadWrite)
+    private static long testPacketRouter(ArrayList<Packet> cachedPacketList,
+                                         final PacketRouter pr,
+                                         int threadRead, int threadWrite)
             throws InterruptedException {
 
         CountDownLatch latch = new CountDownLatch(threadRead + threadWrite);
@@ -299,7 +303,6 @@ public class PerformanceTest {
 
         long fullEnd = System.nanoTime();
         long tookNanos = fullEnd - fullStart;
-        System.out.print("\t"+ nanosToMs((tookNanos)));
         es.shutdown();
 
         return tookNanos;
