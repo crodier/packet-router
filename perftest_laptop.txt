@@ -1,0 +1,405 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for com.ice.interview:packet-router:jar:1.0-SNAPSHOT
+[[1;33mWARNING[m] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 21, column 21
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mcom.ice.interview:packet-router[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding packet-router 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mpacket-router[0;1m ---[m
+[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] skip non existing resourceDirectory /home/chris/coding/packet-router/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mpacket-router[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mpacket-router[0;1m ---[m
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] skip non existing resourceDirectory /home/chris/coding/packet-router/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mpacket-router[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mpacket-router[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /home/chris/coding/packet-router/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running producerconsumer.router.TestPacketRouter
+Distribution details: (Static #) :  1000000, mgmt large: 200000, mgmt: 266667, userLarge: 266667, user: 266666
+Distribution details:(RANDOM #)  :1000000, mgmt large: 165896, mgmt: 626410, userLarge: 0, user: 207694
+0:null, 1: null
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.058 sec
+
+Results :
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mpacket-router[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(make-assembly)[m @ [36mpacket-router[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/chris/coding/packet-router/target/packet-router-1.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.377 s
+[[1;34mINFO[m] Finished at: 2020-10-17T13:43:04-04:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+without G1GC
+
+************   STATIC:  Starting experiments (ETA ten min.) ***********
+
+Distribution details: (Static #) :  10000000, mgmt large: 2000000, mgmt: 2666667, userLarge: 2666667, user: 2666666
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 1
+Agrona SPSC w Busy               , read, 1, write, 1, , Experiments: 355.0, 344.3, 337.0, 351.3, 336.8, 		,worst: 355.0 	best: 336.8	, Avg. ms: 344.9
+JCTools SPSC w Busy              , read, 1, write, 1, , Experiments: 371.0, 354.0, 348.4, 355.8, 355.4, 		,worst: 371.0 	best: 348.4	, Avg. ms: 356.9
+JCTools SPSC w Locking           , read, 1, write, 1, , Experiments: 696.8, 673.9, 706.5, 670.5, 633.2, 		,worst: 706.5 	best: 633.2	, Avg. ms: 676.2
+Concurrent Busy                  , read, 1, write, 1, , Experiments: 913.9, 920.2, 1016.5, 936.4, 938.8, 		,worst: 1016.5 	best: 913.9	, Avg. ms: 945.2
+Concurrent Locking               , read, 1, write, 1, , Experiments: 1077.9, 1038.0, 1164.9, 1003.9, 1099.2, 		,worst: 1164.9 	best: 1003.9	, Avg. ms: 1076.8
+Linked Busy                      , read, 1, write, 1, , Experiments: 2066.9, 1616.3, 1633.4, 1784.9, 1777.0, 		,worst: 2066.9 	best: 1616.3	, Avg. ms: 1775.7
+Linked Locking                   , read, 1, write, 1, , Experiments: 2361.2, 2056.6, 2126.7, 2234.5, 2033.4, 		,worst: 2361.2 	best: 2033.4	, Avg. ms: 2162.5
+Priority Queue Java              , read, 1, write, 1, , Experiments: 5482.8, 5669.7, 5649.2, 5472.6, 6577.0, 		,worst: 6577.0 	best: 5472.6	, Avg. ms: 5770.3
+
+WINNER: Agrona SPSC w Busy               , avg time (ms):  344.9, Ops/Sec = 28,995,446.30
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 2
+Agrona MPSC w Busy               , read, 2, write, 1, , Experiments: 840.3, 844.2, 611.7, 795.0, 822.1, 		,worst: 844.2 	best: 611.7	, Avg. ms: 782.7
+JCTools MPMC w Busy              , read, 2, write, 1, , Experiments: 988.5, 943.4, 898.0, 934.0, 941.0, 		,worst: 988.5 	best: 898.0	, Avg. ms: 941.0
+JCTools MPMC w Locking           , read, 2, write, 1, , Experiments: 1226.4, 1009.5, 1037.1, 1040.6, 993.2, 		,worst: 1226.4 	best: 993.2	, Avg. ms: 1061.4
+Concurrent Busy                  , read, 2, write, 1, , Experiments: 1220.3, 1053.2, 1148.0, 1166.6, 1152.6, 		,worst: 1220.3 	best: 1053.2	, Avg. ms: 1148.1
+Concurrent Locking               , read, 2, write, 1, , Experiments: 1158.2, 1187.5, 1224.0, 1233.3, 1231.9, 		,worst: 1233.3 	best: 1158.2	, Avg. ms: 1207.0
+Linked Busy                      , read, 2, write, 1, , Experiments: 1963.0, 2035.8, 1866.3, 2202.6, 2091.6, 		,worst: 2202.6 	best: 1866.3	, Avg. ms: 2031.9
+Linked Locking                   , read, 2, write, 1, , Experiments: 2098.4, 2012.9, 2196.7, 2121.4, 2101.7, 		,worst: 2196.7 	best: 2012.9	, Avg. ms: 2106.2
+Priority Queue Java              , read, 2, write, 1, , Experiments: 7160.0, 11734.4, 9199.5, 8896.9, 17559.5, 		,worst: 17559.5 	best: 7160.0	, Avg. ms: 10910.1
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  782.7, Ops/Sec = 12,777,047.32
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 3
+Agrona MPSC w Busy               , read, 3, write, 1, , Experiments: 2266.6, 1436.4, 2311.4, 2099.1, 2440.4, 		,worst: 2440.4 	best: 1436.4	, Avg. ms: 2110.8
+JCTools MPMC w Busy              , read, 3, write, 1, , Experiments: 1755.6, 1030.6, 991.2, 2480.8, 1966.1, 		,worst: 2480.8 	best: 991.2	, Avg. ms: 1644.8
+JCTools MPMC w Locking           , read, 3, write, 1, , Experiments: 1444.9, 1246.1, 1214.2, 1317.7, 1206.9, 		,worst: 1444.9 	best: 1206.9	, Avg. ms: 1286.0
+Concurrent Busy                  , read, 3, write, 1, , Experiments: 1038.8, 1296.8, 1340.6, 1034.9, 1352.5, 		,worst: 1352.5 	best: 1034.9	, Avg. ms: 1212.7
+Concurrent Locking               , read, 3, write, 1, , Experiments: 1455.3, 1262.4, 1302.4, 1379.6, 1269.7, 		,worst: 1455.3 	best: 1262.4	, Avg. ms: 1333.9
+Linked Busy                      , read, 3, write, 1, , Experiments: 2054.3, 1857.2, 2044.8, 4822.0, 4687.1, 		,worst: 4822.0 	best: 1857.2	, Avg. ms: 3093.1
+Linked Locking                   , read, 3, write, 1, , Experiments: 2180.2, 2318.3, 2030.8, 4078.0, 2953.3, 		,worst: 4078.0 	best: 2030.8	, Avg. ms: 2712.1
+Priority Queue Java              , read, 3, write, 1, , Experiments: 7971.5, 10981.0, 9319.9, 9763.9, 21178.8, 		,worst: 21178.8 	best: 7971.5	, Avg. ms: 11843.0
+
+WINNER: Concurrent Busy                  , avg time (ms):  1212.7, Ops/Sec = 8,245,880.11
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 4
+Agrona MPSC w Busy               , read, 4, write, 1, , Experiments: 3527.2, 3159.2, 2947.8, 2326.6, 1487.1, 		,worst: 3527.2 	best: 1487.1	, Avg. ms: 2689.6
+JCTools MPMC w Busy              , read, 4, write, 1, , Experiments: 3006.8, 1476.9, 1021.9, 1015.1, 1132.3, 		,worst: 3006.8 	best: 1015.1	, Avg. ms: 1530.6
+JCTools MPMC w Locking           , read, 4, write, 1, , Experiments: 1335.9, 1154.9, 1294.1, 1237.4, 1170.2, 		,worst: 1335.9 	best: 1154.9	, Avg. ms: 1238.5
+Concurrent Busy                  , read, 4, write, 1, , Experiments: 1422.9, 1400.6, 1449.9, 1350.9, 1486.5, 		,worst: 1486.5 	best: 1350.9	, Avg. ms: 1422.2
+Concurrent Locking               , read, 4, write, 1, , Experiments: 1350.7, 1367.3, 1272.0, 1375.5, 1323.9, 		,worst: 1375.5 	best: 1272.0	, Avg. ms: 1337.9
+Linked Busy                      , read, 4, write, 1, , Experiments: 2019.5, 2018.5, 1915.9, 1943.3, 2014.9, 		,worst: 2019.5 	best: 1915.9	, Avg. ms: 1982.4
+Linked Locking                   , read, 4, write, 1, , Experiments: 2260.5, 2056.4, 2068.6, 2117.2, 2116.7, 		,worst: 2260.5 	best: 2056.4	, Avg. ms: 2123.9
+Priority Queue Java              , read, 4, write, 1, , Experiments: 12126.0, 13285.7, 17200.7, 13604.8, 14447.2, 		,worst: 17200.7 	best: 12126.0	, Avg. ms: 14132.9
+
+WINNER: JCTools MPMC w Locking           , avg time (ms):  1238.5, Ops/Sec = 8,074,231.43
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 5
+Agrona MPSC w Busy               , read, 5, write, 1, , Experiments: 1134.6, 948.8, 1046.6, 957.8, 901.7, 		,worst: 1134.6 	best: 901.7	, Avg. ms: 997.9
+JCTools MPMC w Busy              , read, 5, write, 1, , Experiments: 1166.2, 1170.8, 1351.5, 1214.6, 1550.4, 		,worst: 1550.4 	best: 1166.2	, Avg. ms: 1290.7
+JCTools MPMC w Locking           , read, 5, write, 1, , Experiments: 1326.8, 1091.7, 1156.7, 1167.9, 1110.3, 		,worst: 1326.8 	best: 1091.7	, Avg. ms: 1170.7
+Concurrent Busy                  , read, 5, write, 1, , Experiments: 1575.5, 1457.1, 1521.1, 1491.0, 1417.3, 		,worst: 1575.5 	best: 1417.3	, Avg. ms: 1492.4
+Concurrent Locking               , read, 5, write, 1, , Experiments: 1394.8, 1273.6, 1269.6, 1257.9, 1292.7, 		,worst: 1394.8 	best: 1257.9	, Avg. ms: 1297.7
+Linked Busy                      , read, 5, write, 1, , Experiments: 2328.2, 2207.1, 2292.2, 2133.2, 2193.5, 		,worst: 2328.2 	best: 2133.2	, Avg. ms: 2230.8
+Linked Locking                   , read, 5, write, 1, , Experiments: 1912.6, 2361.1, 2126.4, 1945.4, 2252.7, 		,worst: 2361.1 	best: 1912.6	, Avg. ms: 2119.7
+Priority Queue Java              , read, 5, write, 1, , Experiments: 13291.2, 15700.0, 14784.6, 15122.2, 14493.6, 		,worst: 15700.0 	best: 13291.2	, Avg. ms: 14678.3
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  997.9, Ops/Sec = 10,020,766.48
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 6
+Agrona MPSC w Busy               , read, 6, write, 1, , Experiments: 989.6, 1013.6, 984.0, 1002.0, 1172.0, 		,worst: 1172.0 	best: 984.0	, Avg. ms: 1032.2
+JCTools MPMC w Busy              , read, 6, write, 1, , Experiments: 1681.5, 1148.0, 1173.8, 1390.6, 1392.0, 		,worst: 1681.5 	best: 1148.0	, Avg. ms: 1357.2
+JCTools MPMC w Locking           , read, 6, write, 1, , Experiments: 1040.2, 1131.2, 1184.3, 1140.2, 1057.1, 		,worst: 1184.3 	best: 1040.2	, Avg. ms: 1110.6
+Concurrent Busy                  , read, 6, write, 1, , Experiments: 2025.9, 1759.6, 1714.1, 1645.4, 1718.4, 		,worst: 2025.9 	best: 1645.4	, Avg. ms: 1772.7
+Concurrent Locking               , read, 6, write, 1, , Experiments: 2517.3, 3693.7, 3184.1, 3586.6, 2846.7, 		,worst: 3693.7 	best: 2517.3	, Avg. ms: 3165.7
+Linked Busy                      , read, 6, write, 1, , Experiments: 3102.7, 2325.5, 1703.4, 5112.0, 4678.2, 		,worst: 5112.0 	best: 1703.4	, Avg. ms: 3384.3
+Linked Locking                   , read, 6, write, 1, , Experiments: 4912.0, 2392.1, 2225.0, 2259.7, 2266.2, 		,worst: 4912.0 	best: 2225.0	, Avg. ms: 2811.0
+Priority Queue Java              , read, 6, write, 1, , Experiments: 17441.7, 16994.9, 20857.9, 19182.7, 17161.2, 		,worst: 20857.9 	best: 16994.9	, Avg. ms: 18327.7
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  1032.2, Ops/Sec = 9,687,628.26
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 2
+Agrona MPSC w Busy               , read, 2, write, 2, , Experiments: 936.8, 983.6, 953.9, 959.1, 965.0, 		,worst: 983.6 	best: 936.8	, Avg. ms: 959.7
+JCTools MPMC w Busy              , read, 2, write, 2, , Experiments: 1013.6, 998.9, 1010.4, 970.6, 1006.9, 		,worst: 1013.6 	best: 970.6	, Avg. ms: 1000.1
+JCTools MPMC w Locking           , read, 2, write, 2, , Experiments: 983.5, 1092.5, 1083.4, 1197.5, 1253.6, 		,worst: 1253.6 	best: 983.5	, Avg. ms: 1122.1
+Concurrent Busy                  , read, 2, write, 2, , Experiments: 1181.1, 1146.0, 1187.8, 1095.2, 1093.9, 		,worst: 1187.8 	best: 1093.9	, Avg. ms: 1140.8
+Concurrent Locking               , read, 2, write, 2, , Experiments: 1298.3, 1374.2, 1325.8, 1230.1, 1194.7, 		,worst: 1374.2 	best: 1194.7	, Avg. ms: 1284.6
+Linked Busy                      , read, 2, write, 2, , Experiments: 2468.0, 2524.4, 2380.4, 2740.9, 3055.4, 		,worst: 3055.4 	best: 2380.4	, Avg. ms: 2633.8
+Linked Locking                   , read, 2, write, 2, , Experiments: 2538.8, 5026.7, 3583.1, 4868.2, 6549.4, 		,worst: 6549.4 	best: 2538.8	, Avg. ms: 4513.3
+Priority Queue Java              , read, 2, write, 2, , Experiments: 13312.2, 10579.0, 9915.8, 10151.4, 9579.3, 		,worst: 13312.2 	best: 9579.3	, Avg. ms: 10707.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  959.7, Ops/Sec = 10,420,121.36
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 3
+Agrona MPSC w Busy               , read, 3, write, 3, , Experiments: 750.8, 833.9, 822.7, 805.4, 791.8, 		,worst: 833.9 	best: 750.8	, Avg. ms: 800.9
+JCTools MPMC w Busy              , read, 3, write, 3, , Experiments: 862.4, 891.9, 899.0, 888.2, 855.2, 		,worst: 899.0 	best: 855.2	, Avg. ms: 879.3
+JCTools MPMC w Locking           , read, 3, write, 3, , Experiments: 976.8, 1041.8, 1008.2, 915.2, 971.0, 		,worst: 1041.8 	best: 915.2	, Avg. ms: 982.6
+Concurrent Busy                  , read, 3, write, 3, , Experiments: 1094.4, 961.7, 975.8, 1048.6, 990.2, 		,worst: 1094.4 	best: 961.7	, Avg. ms: 1014.1
+Concurrent Locking               , read, 3, write, 3, , Experiments: 1051.9, 1166.0, 1009.9, 1081.6, 1088.2, 		,worst: 1166.0 	best: 1009.9	, Avg. ms: 1079.5
+Linked Busy                      , read, 3, write, 3, , Experiments: 2203.6, 1912.2, 2205.5, 2518.5, 2469.4, 		,worst: 2518.5 	best: 1912.2	, Avg. ms: 2261.8
+Linked Locking                   , read, 3, write, 3, , Experiments: 2561.4, 2344.1, 2363.5, 2415.5, 2221.9, 		,worst: 2561.4 	best: 2221.9	, Avg. ms: 2381.3
+Priority Queue Java              , read, 3, write, 3, , Experiments: 13501.0, 13268.4, 13417.4, 13027.7, 13283.6, 		,worst: 13501.0 	best: 13027.7	, Avg. ms: 13299.6
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  800.9, Ops/Sec = 12,485,581.88
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 4
+Agrona MPSC w Busy               , read, 4, write, 4, , Experiments: 836.9, 827.8, 758.2, 809.0, 850.3, 		,worst: 850.3 	best: 758.2	, Avg. ms: 816.4
+JCTools MPMC w Busy              , read, 4, write, 4, , Experiments: 971.1, 845.7, 993.8, 1050.3, 1025.1, 		,worst: 1050.3 	best: 845.7	, Avg. ms: 977.2
+JCTools MPMC w Locking           , read, 4, write, 4, , Experiments: 1045.1, 993.6, 975.3, 996.5, 1018.8, 		,worst: 1045.1 	best: 975.3	, Avg. ms: 1005.8
+Concurrent Busy                  , read, 4, write, 4, , Experiments: 1359.7, 993.5, 1310.8, 998.6, 1064.6, 		,worst: 1359.7 	best: 993.5	, Avg. ms: 1145.5
+Concurrent Locking               , read, 4, write, 4, , Experiments: 1107.5, 1048.2, 1031.7, 1189.6, 1129.7, 		,worst: 1189.6 	best: 1031.7	, Avg. ms: 1101.3
+Linked Busy                      , read, 4, write, 4, , Experiments: 2818.1, 2828.2, 2911.6, 2880.5, 2790.8, 		,worst: 2911.6 	best: 2790.8	, Avg. ms: 2845.8
+Linked Locking                   , read, 4, write, 4, , Experiments: 2802.4, 2794.1, 2929.0, 2845.5, 2889.7, 		,worst: 2929.0 	best: 2794.1	, Avg. ms: 2852.1
+Priority Queue Java              , read, 4, write, 4, , Experiments: 13075.7, 12208.1, 12187.7, 12113.1, 12687.8, 		,worst: 13075.7 	best: 12113.1	, Avg. ms: 12454.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  816.4, Ops/Sec = 12,248,263.37
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 1
+Agrona MPSC w Busy               , read, 1, write, 2, , Experiments: 634.9, 621.7, 669.3, 544.2, 711.8, 		,worst: 711.8 	best: 544.2	, Avg. ms: 636.4
+JCTools MPSC w Busy              , read, 1, write, 2, , Experiments: 710.3, 637.7, 769.0, 663.4, 745.1, 		,worst: 769.0 	best: 637.7	, Avg. ms: 705.1
+JCTOOLS MPSC w Locking           , read, 1, write, 2, , Experiments: 1112.5, 1031.2, 1060.7, 1055.0, 948.5, 		,worst: 1112.5 	best: 948.5	, Avg. ms: 1041.6
+Concurrent Busy                  , read, 1, write, 2, , Experiments: 1426.6, 1520.3, 1409.2, 1033.8, 953.4, 		,worst: 1520.3 	best: 953.4	, Avg. ms: 1268.7
+Concurrent Locking               , read, 1, write, 2, , Experiments: 1275.4, 1142.5, 1314.7, 1166.2, 1151.3, 		,worst: 1314.7 	best: 1142.5	, Avg. ms: 1210.0
+Linked Busy                      , read, 1, write, 2, , Experiments: 1686.5, 1558.5, 1713.4, 1523.7, 1746.8, 		,worst: 1746.8 	best: 1523.7	, Avg. ms: 1645.8
+Linked Locking                   , read, 1, write, 2, , Experiments: 1984.7, 1946.1, 1808.1, 1756.6, 1696.0, 		,worst: 1984.7 	best: 1696.0	, Avg. ms: 1838.3
+Priority Queue Java              , read, 1, write, 2, , Experiments: 16349.8, 16757.5, 15830.2, 20922.5, 18867.6, 		,worst: 20922.5 	best: 15830.2	, Avg. ms: 17745.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  636.4, Ops/Sec = 15,714,017.60
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 1
+Agrona MPSC w Busy               , read, 1, write, 3, , Experiments: 535.5, 665.0, 535.5, 652.4, 593.4, 		,worst: 665.0 	best: 535.5	, Avg. ms: 596.3
+JCTools MPSC w Busy              , read, 1, write, 3, , Experiments: 718.1, 596.7, 526.4, 715.9, 588.1, 		,worst: 718.1 	best: 526.4	, Avg. ms: 629.1
+JCTOOLS MPSC w Locking           , read, 1, write, 3, , Experiments: 945.2, 835.8, 896.0, 780.1, 761.5, 		,worst: 945.2 	best: 761.5	, Avg. ms: 843.7
+Concurrent Busy                  , read, 1, write, 3, , Experiments: 1029.3, 885.0, 871.7, 1031.7, 1025.5, 		,worst: 1031.7 	best: 871.7	, Avg. ms: 968.7
+Concurrent Locking               , read, 1, write, 3, , Experiments: 1116.9, 1145.8, 1155.1, 1069.0, 1063.1, 		,worst: 1155.1 	best: 1063.1	, Avg. ms: 1110.0
+Linked Busy                      , read, 1, write, 3, , Experiments: 1685.0, 1700.8, 1618.8, 1647.6, 1782.3, 		,worst: 1782.3 	best: 1618.8	, Avg. ms: 1686.9
+Linked Locking                   , read, 1, write, 3, , Experiments: 1614.3, 1600.3, 1711.7, 1711.9, 1595.8, 		,worst: 1711.9 	best: 1595.8	, Avg. ms: 1646.8
+Priority Queue Java              , read, 1, write, 3, , Experiments: 18194.0, 15373.0, 15309.0, 18530.2, 15008.9, 		,worst: 18530.2 	best: 15008.9	, Avg. ms: 16483.0
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  596.3, Ops/Sec = 16,768,697.54
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 1
+Agrona MPSC w Busy               , read, 1, write, 4, , Experiments: 868.9, 761.5, 981.2, 872.3, 893.2, 		,worst: 981.2 	best: 761.5	, Avg. ms: 875.4
+JCTools MPSC w Busy              , read, 1, write, 4, , Experiments: 934.7, 1008.2, 831.4, 1061.6, 839.2, 		,worst: 1061.6 	best: 831.4	, Avg. ms: 935.0
+JCTOOLS MPSC w Locking           , read, 1, write, 4, , Experiments: 1185.4, 916.6, 983.4, 1068.9, 886.8, 		,worst: 1185.4 	best: 886.8	, Avg. ms: 1008.2
+Concurrent Busy                  , read, 1, write, 4, , Experiments: 1153.7, 1233.8, 1114.2, 1478.6, 1162.8, 		,worst: 1478.6 	best: 1114.2	, Avg. ms: 1228.6
+Concurrent Locking               , read, 1, write, 4, , Experiments: 1317.6, 1181.2, 1620.4, 1300.6, 1240.3, 		,worst: 1620.4 	best: 1181.2	, Avg. ms: 1332.0
+Linked Busy                      , read, 1, write, 4, , Experiments: 1958.0, 2024.9, 2049.2, 2001.5, 2061.9, 		,worst: 2061.9 	best: 1958.0	, Avg. ms: 2019.1
+Linked Locking                   , read, 1, write, 4, , Experiments: 2449.3, 2278.0, 2292.5, 2275.4, 2302.2, 		,worst: 2449.3 	best: 2275.4	, Avg. ms: 2319.5
+Priority Queue Java              , read, 1, write, 4, , Experiments: 17175.4, 17462.0, 16531.9, 16272.1, 17477.0, 		,worst: 17477.0 	best: 16272.1	, Avg. ms: 16983.7
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  875.4, Ops/Sec = 11,423,040.90
+
+============== STARTING TEST WITH THREAD COUNTS, write: 5, read: 1
+Agrona MPSC w Busy               , read, 1, write, 5, , Experiments: 751.3, 808.2, 972.7, 772.3, 976.6, 		,worst: 976.6 	best: 751.3	, Avg. ms: 856.2
+JCTools MPSC w Busy              , read, 1, write, 5, , Experiments: 650.9, 967.1, 711.6, 898.1, 878.9, 		,worst: 967.1 	best: 650.9	, Avg. ms: 821.3
+JCTOOLS MPSC w Locking           , read, 1, write, 5, , Experiments: 1025.5, 928.9, 1085.5, 837.8, 821.4, 		,worst: 1085.5 	best: 821.4	, Avg. ms: 939.8
+Concurrent Busy                  , read, 1, write, 5, , Experiments: 1174.5, 807.9, 1340.5, 1043.3, 999.1, 		,worst: 1340.5 	best: 807.9	, Avg. ms: 1073.1
+Concurrent Locking               , read, 1, write, 5, , Experiments: 1144.1, 1222.4, 1001.1, 1104.6, 1119.9, 		,worst: 1222.4 	best: 1001.1	, Avg. ms: 1118.4
+Linked Busy                      , read, 1, write, 5, , Experiments: 1732.4, 1805.6, 1684.4, 1651.3, 1626.7, 		,worst: 1805.6 	best: 1626.7	, Avg. ms: 1700.1
+Linked Locking                   , read, 1, write, 5, , Experiments: 2051.4, 2223.9, 2251.7, 1834.5, 2058.9, 		,worst: 2251.7 	best: 1834.5	, Avg. ms: 2084.1
+Priority Queue Java              , read, 1, write, 5, , Experiments: 17085.0, 16918.8, 16552.8, 17130.7, 19209.9, 		,worst: 19209.9 	best: 16552.8	, Avg. ms: 17379.4
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  821.3, Ops/Sec = 12,175,454.23
+
+============== STARTING TEST WITH THREAD COUNTS, write: 6, read: 1
+Agrona MPSC w Busy               , read, 1, write, 6, , Experiments: 1063.7, 819.5, 716.0, 1029.7, 878.4, 		,worst: 1063.7 	best: 716.0	, Avg. ms: 901.4
+JCTools MPSC w Busy              , read, 1, write, 6, , Experiments: 1103.4, 792.7, 907.3, 1025.0, 818.4, 		,worst: 1103.4 	best: 792.7	, Avg. ms: 929.3
+JCTOOLS MPSC w Locking           , read, 1, write, 6, , Experiments: 1053.5, 901.1, 839.4, 1039.3, 873.5, 		,worst: 1053.5 	best: 839.4	, Avg. ms: 941.4
+Concurrent Busy                  , read, 1, write, 6, , Experiments: 1071.3, 1188.6, 943.0, 1400.5, 1200.1, 		,worst: 1400.5 	best: 943.0	, Avg. ms: 1160.7
+Concurrent Locking               , read, 1, write, 6, , Experiments: 1148.5, 998.0, 1162.6, 1260.7, 1067.1, 		,worst: 1260.7 	best: 998.0	, Avg. ms: 1127.4
+Linked Busy                      , read, 1, write, 6, , Experiments: 1667.4, 1652.8, 1681.7, 1651.0, 1558.0, 		,worst: 1681.7 	best: 1558.0	, Avg. ms: 1642.2
+Linked Locking                   , read, 1, write, 6, , Experiments: 1884.1, 1848.7, 1881.5, 1831.6, 2039.5, 		,worst: 2039.5 	best: 1831.6	, Avg. ms: 1897.1
+Priority Queue Java              , read, 1, write, 6, , Experiments: 16964.3, 17082.3, 16647.1, 16567.2, 16525.8, 		,worst: 17082.3 	best: 16525.8	, Avg. ms: 16757.4
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  901.4, Ops/Sec = 11,093,427.44
+
+Total experiments took (minutes): 30
+
+~~~~~~~~~~~~~  RANDOM:  Starting experiments (ETA ten min.) ~~~~~~~~~~~
+
+Distribution details:(RANDOM #)  :10000000, mgmt large: 4734864, mgmt: 0, userLarge: 0, user: 5265136
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 1
+Agrona SPSC w Busy               , read, 1, write, 1, , Experiments: 496.4, 434.6, 411.6, 413.4, 470.1, 		,worst: 496.4 	best: 411.6	, Avg. ms: 445.2
+JCTools SPSC w Busy              , read, 1, write, 1, , Experiments: 379.4, 432.4, 444.7, 417.9, 382.3, 		,worst: 444.7 	best: 379.4	, Avg. ms: 411.3
+JCTools SPSC w Locking           , read, 1, write, 1, , Experiments: 728.4, 698.7, 693.6, 751.2, 739.9, 		,worst: 751.2 	best: 693.6	, Avg. ms: 722.4
+Concurrent Busy                  , read, 1, write, 1, , Experiments: 934.1, 804.1, 815.3, 872.5, 715.8, 		,worst: 934.1 	best: 715.8	, Avg. ms: 828.3
+Concurrent Locking               , read, 1, write, 1, , Experiments: 1115.1, 1137.9, 1149.3, 1213.2, 1083.9, 		,worst: 1213.2 	best: 1083.9	, Avg. ms: 1139.9
+Linked Busy                      , read, 1, write, 1, , Experiments: 2251.1, 2282.2, 2037.0, 1698.9, 2085.1, 		,worst: 2282.2 	best: 1698.9	, Avg. ms: 2070.9
+Linked Locking                   , read, 1, write, 1, , Experiments: 2939.4, 2399.6, 1787.3, 1953.9, 2218.9, 		,worst: 2939.4 	best: 1787.3	, Avg. ms: 2259.8
+Priority Queue Java              , read, 1, write, 1, , Experiments: 5368.6, 5539.4, 5399.8, 5620.4, 5460.2, 		,worst: 5620.4 	best: 5368.6	, Avg. ms: 5477.7
+
+WINNER: JCTools SPSC w Busy              , avg time (ms):  411.3, Ops/Sec = 24,312,541.61
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 2
+Agrona MPSC w Busy               , read, 2, write, 1, , Experiments: 834.0, 806.0, 788.3, 838.2, 817.1, 		,worst: 838.2 	best: 788.3	, Avg. ms: 816.7
+JCTools MPMC w Busy              , read, 2, write, 1, , Experiments: 786.2, 629.2, 802.4, 873.9, 809.7, 		,worst: 873.9 	best: 629.2	, Avg. ms: 780.3
+JCTools MPMC w Locking           , read, 2, write, 1, , Experiments: 815.4, 836.5, 872.7, 828.1, 826.9, 		,worst: 872.7 	best: 815.4	, Avg. ms: 835.9
+Concurrent Busy                  , read, 2, write, 1, , Experiments: 1096.8, 871.9, 1055.2, 982.0, 1046.9, 		,worst: 1096.8 	best: 871.9	, Avg. ms: 1010.6
+Concurrent Locking               , read, 2, write, 1, , Experiments: 1176.5, 1172.3, 1189.1, 1060.5, 1110.1, 		,worst: 1189.1 	best: 1060.5	, Avg. ms: 1141.7
+Linked Busy                      , read, 2, write, 1, , Experiments: 2180.6, 2330.5, 2237.8, 2433.9, 2439.8, 		,worst: 2439.8 	best: 2180.6	, Avg. ms: 2324.5
+Linked Locking                   , read, 2, write, 1, , Experiments: 2453.0, 2883.3, 2654.9, 2610.4, 3105.6, 		,worst: 3105.6 	best: 2453.0	, Avg. ms: 2741.4
+Priority Queue Java              , read, 2, write, 1, , Experiments: 5791.9, 5131.3, 5660.3, 5706.6, 5834.4, 		,worst: 5834.4 	best: 5131.3	, Avg. ms: 5624.9
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  780.3, Ops/Sec = 12,815,822.18
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 3
+Agrona MPSC w Busy               , read, 3, write, 1, , Experiments: 797.8, 710.0, 844.7, 815.1, 829.9, 		,worst: 844.7 	best: 710.0	, Avg. ms: 799.5
+JCTools MPMC w Busy              , read, 3, write, 1, , Experiments: 822.5, 855.3, 682.7, 774.8, 880.9, 		,worst: 880.9 	best: 682.7	, Avg. ms: 803.3
+JCTools MPMC w Locking           , read, 3, write, 1, , Experiments: 827.8, 853.4, 949.1, 898.1, 869.4, 		,worst: 949.1 	best: 827.8	, Avg. ms: 879.6
+Concurrent Busy                  , read, 3, write, 1, , Experiments: 985.5, 914.7, 1565.7, 1750.4, 1759.6, 		,worst: 1759.6 	best: 914.7	, Avg. ms: 1395.2
+Concurrent Locking               , read, 3, write, 1, , Experiments: 1268.2, 1280.4, 1209.5, 1273.6, 1183.7, 		,worst: 1280.4 	best: 1183.7	, Avg. ms: 1243.1
+Linked Busy                      , read, 3, write, 1, , Experiments: 1549.3, 1421.3, 1420.0, 1556.9, 1383.3, 		,worst: 1556.9 	best: 1383.3	, Avg. ms: 1466.2
+Linked Locking                   , read, 3, write, 1, , Experiments: 1878.1, 1788.1, 1620.2, 1581.4, 1755.5, 		,worst: 1878.1 	best: 1581.4	, Avg. ms: 1724.7
+Priority Queue Java              , read, 3, write, 1, , Experiments: 7521.0, 8382.2, 8762.4, 8685.1, 8987.0, 		,worst: 8987.0 	best: 7521.0	, Avg. ms: 8467.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  799.5, Ops/Sec = 12,507,664.06
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 4
+Agrona MPSC w Busy               , read, 4, write, 1, , Experiments: 817.8, 884.1, 931.0, 878.2, 955.2, 		,worst: 955.2 	best: 817.8	, Avg. ms: 893.2
+JCTools MPMC w Busy              , read, 4, write, 1, , Experiments: 987.1, 958.4, 997.8, 863.6, 971.0, 		,worst: 997.8 	best: 863.6	, Avg. ms: 955.6
+JCTools MPMC w Locking           , read, 4, write, 1, , Experiments: 979.8, 928.6, 884.6, 960.8, 898.8, 		,worst: 979.8 	best: 884.6	, Avg. ms: 930.5
+Concurrent Busy                  , read, 4, write, 1, , Experiments: 1513.0, 1594.1, 2042.2, 2020.8, 1985.4, 		,worst: 2042.2 	best: 1513.0	, Avg. ms: 1831.1
+Concurrent Locking               , read, 4, write, 1, , Experiments: 1096.2, 1236.8, 1268.4, 1183.6, 1197.5, 		,worst: 1268.4 	best: 1096.2	, Avg. ms: 1196.5
+Linked Busy                      , read, 4, write, 1, , Experiments: 1876.0, 1602.2, 1625.3, 1678.5, 1496.8, 		,worst: 1876.0 	best: 1496.8	, Avg. ms: 1655.8
+Linked Locking                   , read, 4, write, 1, , Experiments: 1814.2, 1849.4, 1796.5, 1804.7, 2052.6, 		,worst: 2052.6 	best: 1796.5	, Avg. ms: 1863.5
+Priority Queue Java              , read, 4, write, 1, , Experiments: 9812.5, 10890.3, 11692.6, 11684.3, 12018.7, 		,worst: 12018.7 	best: 9812.5	, Avg. ms: 11219.7
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  893.2, Ops/Sec = 11,195,205.39
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 5
+Agrona MPSC w Busy               , read, 5, write, 1, , Experiments: 1188.2, 1102.0, 999.8, 1004.7, 1002.2, 		,worst: 1188.2 	best: 999.8	, Avg. ms: 1059.4
+JCTools MPMC w Busy              , read, 5, write, 1, , Experiments: 1113.6, 880.3, 952.1, 992.6, 1013.3, 		,worst: 1113.6 	best: 880.3	, Avg. ms: 990.4
+JCTools MPMC w Locking           , read, 5, write, 1, , Experiments: 1019.6, 1087.4, 994.4, 1013.7, 1055.0, 		,worst: 1087.4 	best: 994.4	, Avg. ms: 1034.0
+Concurrent Busy                  , read, 5, write, 1, , Experiments: 2322.1, 1955.2, 2222.1, 2041.1, 2022.0, 		,worst: 2322.1 	best: 1955.2	, Avg. ms: 2112.5
+Concurrent Locking               , read, 5, write, 1, , Experiments: 1155.3, 1165.6, 1313.7, 1205.6, 1231.8, 		,worst: 1313.7 	best: 1155.3	, Avg. ms: 1214.4
+Linked Busy                      , read, 5, write, 1, , Experiments: 1850.3, 1717.5, 1686.3, 1935.3, 1695.4, 		,worst: 1935.3 	best: 1686.3	, Avg. ms: 1777.0
+Linked Locking                   , read, 5, write, 1, , Experiments: 2037.3, 2044.3, 1862.6, 1935.8, 1995.0, 		,worst: 2044.3 	best: 1862.6	, Avg. ms: 1975.0
+Priority Queue Java              , read, 5, write, 1, , Experiments: 12309.2, 12273.3, 14759.9, 14387.1, 14713.8, 		,worst: 14759.9 	best: 12273.3	, Avg. ms: 13688.7
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  990.4, Ops/Sec = 10,097,093.47
+
+============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 6
+Agrona MPSC w Busy               , read, 6, write, 1, , Experiments: 1020.0, 954.0, 1055.9, 903.5, 1024.9, 		,worst: 1055.9 	best: 903.5	, Avg. ms: 991.7
+JCTools MPMC w Busy              , read, 6, write, 1, , Experiments: 1264.1, 953.5, 1022.8, 919.6, 1094.4, 		,worst: 1264.1 	best: 919.6	, Avg. ms: 1050.9
+JCTools MPMC w Locking           , read, 6, write, 1, , Experiments: 985.8, 1011.3, 987.8, 1026.4, 1016.1, 		,worst: 1026.4 	best: 985.8	, Avg. ms: 1005.5
+Concurrent Busy                  , read, 6, write, 1, , Experiments: 2353.9, 1739.0, 2179.4, 2223.2, 2012.7, 		,worst: 2353.9 	best: 1739.0	, Avg. ms: 2101.6
+Concurrent Locking               , read, 6, write, 1, , Experiments: 1189.6, 974.2, 1094.4, 1166.2, 1209.1, 		,worst: 1209.1 	best: 974.2	, Avg. ms: 1126.7
+Linked Busy                      , read, 6, write, 1, , Experiments: 1796.5, 1916.5, 1896.0, 1900.4, 1954.5, 		,worst: 1954.5 	best: 1796.5	, Avg. ms: 1892.8
+Linked Locking                   , read, 6, write, 1, , Experiments: 2278.1, 2010.5, 1967.2, 2179.6, 2024.5, 		,worst: 2278.1 	best: 1967.2	, Avg. ms: 2092.0
+Priority Queue Java              , read, 6, write, 1, , Experiments: 14045.9, 15919.0, 16706.7, 15264.6, 14309.6, 		,worst: 16706.7 	best: 14045.9	, Avg. ms: 15249.2
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  991.7, Ops/Sec = 10,084,139.97
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 2
+Agrona MPSC w Busy               , read, 2, write, 2, , Experiments: 833.4, 979.9, 839.3, 971.7, 932.5, 		,worst: 979.9 	best: 833.4	, Avg. ms: 911.4
+JCTools MPMC w Busy              , read, 2, write, 2, , Experiments: 693.0, 816.2, 920.4, 827.7, 846.8, 		,worst: 920.4 	best: 693.0	, Avg. ms: 820.8
+JCTools MPMC w Locking           , read, 2, write, 2, , Experiments: 1132.0, 887.8, 1218.0, 1123.5, 1111.5, 		,worst: 1218.0 	best: 887.8	, Avg. ms: 1094.6
+Concurrent Busy                  , read, 2, write, 2, , Experiments: 1223.2, 1014.8, 1067.5, 1101.4, 1009.4, 		,worst: 1223.2 	best: 1009.4	, Avg. ms: 1083.2
+Concurrent Locking               , read, 2, write, 2, , Experiments: 1383.0, 1127.2, 1256.5, 1340.3, 1364.8, 		,worst: 1383.0 	best: 1127.2	, Avg. ms: 1294.3
+Linked Busy                      , read, 2, write, 2, , Experiments: 2985.1, 3040.0, 2806.1, 2809.5, 2692.6, 		,worst: 3040.0 	best: 2692.6	, Avg. ms: 2866.7
+Linked Locking                   , read, 2, write, 2, , Experiments: 3274.8, 3095.0, 2934.1, 2608.1, 2909.5, 		,worst: 3274.8 	best: 2608.1	, Avg. ms: 2964.3
+Priority Queue Java              , read, 2, write, 2, , Experiments: 13568.7, 15284.9, 14336.6, 15982.8, 14025.7, 		,worst: 15982.8 	best: 13568.7	, Avg. ms: 14639.7
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  820.8, Ops/Sec = 12,183,081.80
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 3
+Agrona MPSC w Busy               , read, 3, write, 3, , Experiments: 770.4, 924.4, 871.3, 836.2, 866.9, 		,worst: 924.4 	best: 770.4	, Avg. ms: 853.8
+JCTools MPMC w Busy              , read, 3, write, 3, , Experiments: 928.2, 822.9, 714.3, 797.9, 863.3, 		,worst: 928.2 	best: 714.3	, Avg. ms: 825.3
+JCTools MPMC w Locking           , read, 3, write, 3, , Experiments: 943.6, 1038.9, 935.3, 974.1, 944.4, 		,worst: 1038.9 	best: 935.3	, Avg. ms: 967.3
+Concurrent Busy                  , read, 3, write, 3, , Experiments: 1135.4, 1010.5, 1049.2, 1036.6, 1070.1, 		,worst: 1135.4 	best: 1010.5	, Avg. ms: 1060.4
+Concurrent Locking               , read, 3, write, 3, , Experiments: 1223.2, 1177.2, 1190.8, 1212.1, 1122.1, 		,worst: 1223.2 	best: 1122.1	, Avg. ms: 1185.1
+Linked Busy                      , read, 3, write, 3, , Experiments: 2208.9, 2107.7, 1929.6, 2134.4, 2067.5, 		,worst: 2208.9 	best: 1929.6	, Avg. ms: 2089.6
+Linked Locking                   , read, 3, write, 3, , Experiments: 2451.2, 2412.7, 2334.0, 2255.2, 2278.6, 		,worst: 2451.2 	best: 2255.2	, Avg. ms: 2346.3
+Priority Queue Java              , read, 3, write, 3, , Experiments: 18484.6, 17681.8, 16395.9, 13559.3, 16698.8, 		,worst: 18484.6 	best: 13559.3	, Avg. ms: 16564.1
+
+WINNER: JCTools MPMC w Busy              , avg time (ms):  825.3, Ops/Sec = 12,116,849.81
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 4
+Agrona MPSC w Busy               , read, 4, write, 4, , Experiments: 833.2, 905.5, 899.2, 834.5, 831.3, 		,worst: 905.5 	best: 831.3	, Avg. ms: 860.7
+JCTools MPMC w Busy              , read, 4, write, 4, , Experiments: 808.9, 882.8, 872.4, 887.2, 949.5, 		,worst: 949.5 	best: 808.9	, Avg. ms: 880.2
+JCTools MPMC w Locking           , read, 4, write, 4, , Experiments: 880.6, 880.5, 981.5, 879.6, 933.6, 		,worst: 981.5 	best: 879.6	, Avg. ms: 911.2
+Concurrent Busy                  , read, 4, write, 4, , Experiments: 1154.1, 1084.8, 1097.8, 1090.2, 1109.6, 		,worst: 1154.1 	best: 1084.8	, Avg. ms: 1107.3
+Concurrent Locking               , read, 4, write, 4, , Experiments: 1178.8, 1058.4, 1098.7, 1107.9, 1171.6, 		,worst: 1178.8 	best: 1058.4	, Avg. ms: 1123.1
+Linked Busy                      , read, 4, write, 4, , Experiments: 1806.7, 1857.4, 1869.8, 1734.5, 1751.5, 		,worst: 1869.8 	best: 1734.5	, Avg. ms: 1804.0
+Linked Locking                   , read, 4, write, 4, , Experiments: 2090.9, 2181.4, 2099.3, 2123.3, 2170.3, 		,worst: 2181.4 	best: 2090.9	, Avg. ms: 2133.1
+Priority Queue Java              , read, 4, write, 4, , Experiments: 18747.4, 15555.5, 16668.5, 13871.6, 14935.3, 		,worst: 18747.4 	best: 13871.6	, Avg. ms: 15955.7
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  860.7, Ops/Sec = 11,617,860.94
+
+============== STARTING TEST WITH THREAD COUNTS, write: 2, read: 1
+Agrona MPSC w Busy               , read, 1, write, 2, , Experiments: 692.9, 527.2, 523.6, 682.0, 502.5, 		,worst: 692.9 	best: 502.5	, Avg. ms: 585.6
+JCTools MPSC w Busy              , read, 1, write, 2, , Experiments: 659.5, 513.3, 692.5, 544.7, 544.4, 		,worst: 692.5 	best: 513.3	, Avg. ms: 590.9
+JCTOOLS MPSC w Locking           , read, 1, write, 2, , Experiments: 1015.5, 984.1, 971.1, 1029.5, 1050.2, 		,worst: 1050.2 	best: 971.1	, Avg. ms: 1010.1
+Concurrent Busy                  , read, 1, write, 2, , Experiments: 1007.4, 917.5, 989.2, 1017.4, 954.4, 		,worst: 1017.4 	best: 917.5	, Avg. ms: 977.2
+Concurrent Locking               , read, 1, write, 2, , Experiments: 1195.3, 1197.1, 1241.6, 1233.7, 1241.8, 		,worst: 1241.8 	best: 1195.3	, Avg. ms: 1221.9
+Linked Busy                      , read, 1, write, 2, , Experiments: 2402.8, 2071.2, 2072.2, 2229.6, 2270.6, 		,worst: 2402.8 	best: 2071.2	, Avg. ms: 2209.3
+Linked Locking                   , read, 1, write, 2, , Experiments: 3109.8, 3235.3, 2703.0, 2722.8, 2924.7, 		,worst: 3235.3 	best: 2703.0	, Avg. ms: 2939.1
+Priority Queue Java              , read, 1, write, 2, , Experiments: 15125.0, 15283.0, 13968.9, 14524.1, 12996.6, 		,worst: 15283.0 	best: 12996.6	, Avg. ms: 14379.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  585.6, Ops/Sec = 17,076,281.17
+
+============== STARTING TEST WITH THREAD COUNTS, write: 3, read: 1
+Agrona MPSC w Busy               , read, 1, write, 3, , Experiments: 695.2, 580.4, 636.7, 657.9, 642.3, 		,worst: 695.2 	best: 580.4	, Avg. ms: 642.5
+JCTools MPSC w Busy              , read, 1, write, 3, , Experiments: 602.1, 490.0, 607.4, 619.4, 594.8, 		,worst: 619.4 	best: 490.0	, Avg. ms: 582.7
+JCTOOLS MPSC w Locking           , read, 1, write, 3, , Experiments: 741.9, 806.4, 964.0, 716.8, 762.5, 		,worst: 964.0 	best: 716.8	, Avg. ms: 798.3
+Concurrent Busy                  , read, 1, write, 3, , Experiments: 1019.4, 1121.8, 1035.4, 1005.8, 1044.9, 		,worst: 1121.8 	best: 1005.8	, Avg. ms: 1045.4
+Concurrent Locking               , read, 1, write, 3, , Experiments: 1117.4, 1159.5, 1058.1, 1127.2, 1161.8, 		,worst: 1161.8 	best: 1058.1	, Avg. ms: 1124.8
+Linked Busy                      , read, 1, write, 3, , Experiments: 2482.9, 2631.4, 2668.4, 2812.1, 2667.1, 		,worst: 2812.1 	best: 2482.9	, Avg. ms: 2652.4
+Linked Locking                   , read, 1, write, 3, , Experiments: 3884.6, 3582.7, 3280.5, 3572.7, 3456.7, 		,worst: 3884.6 	best: 3280.5	, Avg. ms: 3555.4
+Priority Queue Java              , read, 1, write, 3, , Experiments: 12891.4, 13872.0, 11862.1, 13067.1, 11790.0, 		,worst: 13872.0 	best: 11790.0	, Avg. ms: 12696.5
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  582.7, Ops/Sec = 17,160,422.30
+
+============== STARTING TEST WITH THREAD COUNTS, write: 4, read: 1
+Agrona MPSC w Busy               , read, 1, write, 4, , Experiments: 769.0, 611.7, 651.8, 751.3, 677.6, 		,worst: 769.0 	best: 611.7	, Avg. ms: 692.3
+JCTools MPSC w Busy              , read, 1, write, 4, , Experiments: 725.3, 601.4, 744.0, 677.8, 582.6, 		,worst: 744.0 	best: 582.6	, Avg. ms: 666.2
+JCTOOLS MPSC w Locking           , read, 1, write, 4, , Experiments: 737.6, 718.1, 835.9, 801.6, 776.7, 		,worst: 835.9 	best: 718.1	, Avg. ms: 774.0
+Concurrent Busy                  , read, 1, write, 4, , Experiments: 1105.8, 1050.3, 1314.0, 1111.4, 1205.4, 		,worst: 1314.0 	best: 1050.3	, Avg. ms: 1157.4
+Concurrent Locking               , read, 1, write, 4, , Experiments: 1156.0, 1163.4, 1139.9, 1212.8, 1191.0, 		,worst: 1212.8 	best: 1139.9	, Avg. ms: 1172.6
+Linked Busy                      , read, 1, write, 4, , Experiments: 2882.6, 1530.9, 2073.4, 2134.2, 2198.9, 		,worst: 2882.6 	best: 1530.9	, Avg. ms: 2164.0
+Linked Locking                   , read, 1, write, 4, , Experiments: 2896.4, 3378.9, 3157.7, 3283.6, 2942.8, 		,worst: 3378.9 	best: 2896.4	, Avg. ms: 3131.9
+Priority Queue Java              , read, 1, write, 4, , Experiments: 12292.2, 11354.4, 12738.9, 12001.6, 12210.9, 		,worst: 12738.9 	best: 11354.4	, Avg. ms: 12119.6
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  666.2, Ops/Sec = 15,010,867.89
+
+============== STARTING TEST WITH THREAD COUNTS, write: 5, read: 1
+Agrona MPSC w Busy               , read, 1, write, 5, , Experiments: 669.4, 678.8, 849.3, 817.4, 879.2, 		,worst: 879.2 	best: 669.4	, Avg. ms: 778.8
+JCTools MPSC w Busy              , read, 1, write, 5, , Experiments: 647.2, 715.1, 646.8, 754.8, 635.1, 		,worst: 754.8 	best: 635.1	, Avg. ms: 679.8
+JCTOOLS MPSC w Locking           , read, 1, write, 5, , Experiments: 714.7, 674.2, 732.1, 681.0, 792.4, 		,worst: 792.4 	best: 674.2	, Avg. ms: 718.9
+Concurrent Busy                  , read, 1, write, 5, , Experiments: 1105.9, 1177.9, 1065.5, 1133.6, 1113.7, 		,worst: 1177.9 	best: 1065.5	, Avg. ms: 1119.3
+Concurrent Locking               , read, 1, write, 5, , Experiments: 1145.3, 1065.8, 1281.8, 1144.6, 1338.4, 		,worst: 1338.4 	best: 1065.8	, Avg. ms: 1195.2
+Linked Busy                      , read, 1, write, 5, , Experiments: 2437.0, 1443.8, 1893.3, 1460.0, 1805.6, 		,worst: 2437.0 	best: 1443.8	, Avg. ms: 1807.9
+Linked Locking                   , read, 1, write, 5, , Experiments: 2574.5, 3050.6, 2299.0, 2962.5, 2807.5, 		,worst: 3050.6 	best: 2299.0	, Avg. ms: 2738.8
+Priority Queue Java              , read, 1, write, 5, , Experiments: 11628.0, 12720.3, 12870.7, 12570.7, 13698.5, 		,worst: 13698.5 	best: 11628.0	, Avg. ms: 12697.6
+
+WINNER: JCTools MPSC w Busy              , avg time (ms):  679.8, Ops/Sec = 14,710,311.11
+
+============== STARTING TEST WITH THREAD COUNTS, write: 6, read: 1
+Agrona MPSC w Busy               , read, 1, write, 6, , Experiments: 734.0, 886.0, 931.0, 802.2, 813.4, 		,worst: 931.0 	best: 734.0	, Avg. ms: 833.3
+JCTools MPSC w Busy              , read, 1, write, 6, , Experiments: 771.1, 777.2, 995.6, 824.3, 805.0, 		,worst: 995.6 	best: 771.1	, Avg. ms: 834.6
+JCTOOLS MPSC w Locking           , read, 1, write, 6, , Experiments: 861.7, 836.2, 969.8, 779.9, 770.8, 		,worst: 969.8 	best: 770.8	, Avg. ms: 843.7
+Concurrent Busy                  , read, 1, write, 6, , Experiments: 1286.5, 1064.9, 1083.3, 1102.1, 1207.2, 		,worst: 1286.5 	best: 1064.9	, Avg. ms: 1148.8
+Concurrent Locking               , read, 1, write, 6, , Experiments: 1158.0, 1166.9, 1221.1, 1214.6, 1224.0, 		,worst: 1224.0 	best: 1158.0	, Avg. ms: 1196.9
+Linked Busy                      , read, 1, write, 6, , Experiments: 2299.8, 1901.9, 2044.8, 2225.3, 1820.5, 		,worst: 2299.8 	best: 1820.5	, Avg. ms: 2058.5
+Linked Locking                   , read, 1, write, 6, , Experiments: 2701.8, 2791.5, 2942.8, 2186.3, 2761.8, 		,worst: 2942.8 	best: 2186.3	, Avg. ms: 2676.8
+Priority Queue Java              , read, 1, write, 6, , Experiments: 13455.9, 13057.3, 12190.4, 12860.0, 12204.1, 		,worst: 13455.9 	best: 12190.4	, Avg. ms: 12753.5
+
+WINNER: Agrona MPSC w Busy               , avg time (ms):  833.3, Ops/Sec = 12,000,401.06
+
+Total experiments took (minutes): 27
