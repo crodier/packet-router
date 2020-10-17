@@ -6,6 +6,18 @@ To explore Java Queue performance:
 
 needs only 'mvn' and java in your path to run
 
+Queues are important for so called 'sequential problems',
+
+These are the most common type of message processing,
+because message 'fairness' is almost always a requirement.
+
+## Code review
+
+Please see **PacketRouterTest**  "**main**" method as an entry point.
+
+The main method tests each of the PacketRouter implementations,
+once each with the *Busy Wait* and *Blocking Wait* strategies.
+
 ---
 
 This project performs, Java, concurrent Queue performance evaluations.
@@ -13,7 +25,7 @@ This project performs, Java, concurrent Queue performance evaluations.
 See the problem:  **problem.txt** (suitable for interviews)
 
 This problem, explores Java from the perspective of the work of Leslie Lamport, 
-of Byzantine Generals and general fame:
+inventor of 'Byzantine Generals' and other concurrent theory:
 
 - https://en.wikipedia.org/wiki/Leslie_Lamport
 - http://lamport.azurewebsites.net/pubs/pubs.html
@@ -24,7 +36,7 @@ of Byzantine Generals and general fame:
 - evaluate the available java libraires, across different strategies
 - e.g. Single Producer Single Consumer (SPSC)
 - e.g. Multiple Producer Single consumer (MPSC)
-- Next, with high and low priority messages, again, ordered
+- Next, with a message priority:  high and low priority messages (still ordered)
 
 ## My solution
 
@@ -37,7 +49,7 @@ but the results are typically stable across machines.
 
 ### Results
 
-- **(winner) Agrona** - ring buffer based, Martin Thompson, HFT finance
+- **(winner) Agrona** - ring buffer based (unsafe), Martin Thompson, HFT finance
 - (close second) **JCTools collections**, Apache, with custom spin wait strategy
 - 2x slower:  Java Lists, with custom Wait strategies
 - 3x slower:  Java Priority Queue is the slowest approach tested
@@ -68,7 +80,13 @@ Useful blog articles:
 - http://psy-lob-saw.blogspot.com/p/lock-free-queues.html
 - https://psy-lob-saw.blogspot.com/2015/01/mpmc-multi-multi-queue-vs-clq.html
 
-## Priority messaging, notes
+## Notes on Priority messaging
+
+Due to the relaxed ordering of the problem specification, as far as non-atomic read/writes of priority.
+I use four queues to handle priority (one for each of mgmt large, mgmt, user large, user),
+instead of a Priority Blocking Queue, the natural selection from Java (but I also test Java Priority Queue for reference.)
+
+While experimental low-lock queues exist, lists of Queues are expected to perform better, with either Busy and Blocking waits, and I try both approaches.
 
 Using multiple Queues perform better than one Priority Queue, 
 
@@ -81,26 +99,14 @@ But a priority queue,
 Checking each Queue, instead of popping the top of a PriorityQueue, is more work for the readers;
 however, the four queues, interestingly, reduces locking, blocking, and reduces the lock contention
 by distributing against multiple Queues instead of, contending for one.
-The reduction in contention dominates over doing more operations.
-
-## Code review
-
-Please see *PacketRouterTest* main method as an entry point.
-
-The main method tests each of the PacketRouter implementations,
-with the Busy Wait and Blocking Wait strategies.
+The reduction in a single point of contention dominates 
+the performance vs. doing a few more operations with less contention.
 
 ## Building and Running
 
 Either Eclipse or IntelliJ may be used to open the Maven pom.xml file, as a project file.
 
-The test output shows the strengths and weaknesses of the different approaches, which focus on using four Queues to handle priority.
-
-Due to the relaxed ordering of the problem specification, as far as non-atomic read/writes of priority.
-I use four queues to handle priority (one for each of mgmt large, mgmt, user large, user),
-instead of a Priority Blocking Queue, the natural selection from Java (but I also test Java Priority Queue for reference.)
-
-While experimental low-lock queues exist, lists of Queues are expected to perform better, with either Busy and Blocking waits, and I try both approaches.
+The test output shows the strengths and weaknesses of the different approaches.
 
 ### JCTools review
 
@@ -120,15 +126,19 @@ These introduce, a small but meaningful overhead to the sized ring buffers.
 Presumably this is due to the memory moving in and out of L2 and into L1 instead of being pinned
 in the L2 cache.
 
-In my JCTools experiments, I am using static sized ring size buffers, to find the best throughput.
+In my JCTools experiments, 
+I am using static sized ring size buffers, to find the best throughput,
+for expected message rates.
 
 ## Code Notes
 
-Provided is a busy wait, and a locking wait strategy.  
+Provided are two approaches for handling thread contention.
+ 
+One is *Busy Wait*, the other, a *Locking Wait* strategy.  
 
-As contention increases, we can see the Locking Wait winning tests (but not always, even in high contention.)
-I am unable to achieve high contention on my laptop, but can see the beginnings of locking performance catching up with 8 cores in use, as expected.
+The results are as expected.  Locking outperforms, only under very high contention.
 
+As contention increases, we can see the *Locking Wait* winning tests (but not always, even in high contention.)
 
 ## Java
 
