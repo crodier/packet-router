@@ -1,64 +1,7 @@
-[[1;34mINFO[m] Scanning for projects...
-[[1;33mWARNING[m] 
-[[1;33mWARNING[m] Some problems were encountered while building the effective model for com.ice.interview:packet-router:jar:1.0-SNAPSHOT
-[[1;33mWARNING[m] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 21, column 21
-[[1;33mWARNING[m] 
-[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
-[[1;33mWARNING[m] 
-[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
-[[1;33mWARNING[m] 
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m------------------< [0;36mcom.ice.interview:packet-router[0;1m >-------------------[m
-[[1;34mINFO[m] [1mBuilding packet-router 1.0-SNAPSHOT[m
-[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mpacket-router[0;1m ---[m
-[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[[1;34mINFO[m] skip non existing resourceDirectory /home/chris/coding/packet-router/src/main/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mpacket-router[0;1m ---[m
-[[1;34mINFO[m] Nothing to compile - all classes are up to date
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mpacket-router[0;1m ---[m
-[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[[1;34mINFO[m] skip non existing resourceDirectory /home/chris/coding/packet-router/src/test/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mpacket-router[0;1m ---[m
-[[1;34mINFO[m] Nothing to compile - all classes are up to date
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mpacket-router[0;1m ---[m
-[[1;34mINFO[m] Surefire report directory: /home/chris/coding/packet-router/target/surefire-reports
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running producerconsumer.router.TestPacketRouter
-Distribution details: (Static #) :  1000000, mgmt large: 200000, mgmt: 266667, userLarge: 266667, user: 266666
-Distribution details:(RANDOM #)  :1000000, mgmt large: 165896, mgmt: 626410, userLarge: 0, user: 207694
-0:null, 1: null
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.058 sec
-
-Results :
-
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
-
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mpacket-router[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(make-assembly)[m @ [36mpacket-router[0;1m ---[m
-[[1;34mINFO[m] Building jar: /home/chris/coding/packet-router/target/packet-router-1.0-SNAPSHOT-jar-with-dependencies.jar
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  3.377 s
-[[1;34mINFO[m] Finished at: 2020-10-17T13:43:04-04:00
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-without G1GC
 
 ************   STATIC:  Starting experiments (ETA ten min.) ***********
 
-Distribution details: (Static #) :  10000000, mgmt large: 2000000, mgmt: 2666667, userLarge: 2666667, user: 2666666
+Distribution details: (Static #) :  10,000,000, urgent high: 2,000,000, urgent low: 2,666,667, normal high: 2,666,667, normal low: 2,666,666
 
 ============== STARTING TEST WITH THREAD COUNTS, write: 1, read: 1
 Agrona SPSC w Busy               , read, 1, write, 1, , Experiments: 355.0, 344.3, 337.0, 351.3, 336.8, 		,worst: 355.0 	best: 336.8	, Avg. ms: 344.9
