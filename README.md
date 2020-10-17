@@ -50,12 +50,11 @@ inventor of 'Byzantine Generals' and other concurrent theory:
 - http://lamport.azurewebsites.net/pubs/pubs.html
 
 ### Problem Summary
+- With message priorities, then, ordered
 - test the performance of Java Queues for **ordered handoff** of messages, *in-process*
-    - Fastest queues are ring buffers, using transactional memory
 - evaluate the available java libraires, across different strategies
 - e.g. Single Producer Single Consumer (SPSC)
 - e.g. Multiple Producer Single consumer (MPSC)
-- Next, with a message priority:  high and low priority messages (still ordered)
 
 ## My solution
 
@@ -68,7 +67,9 @@ but the results are typically stable across machines.
 
 ### Results
 
-- **(winner) Agrona** - ring buffer based (unsafe), Martin Thompson, HFT finance
+The fastest queues are ring buffers, using transactional memory.
+
+- **(winner) Agrona** - ring buffer based (+ unsafe access), Martin Thompson, HFT finance
 - (close second) **JCTools collections**, Apache, with custom spin wait strategy
 - 2x slower:  Java Lists, with custom Wait strategies
 - 3x slower:  Java Priority Queue is the slowest approach tested
@@ -83,8 +84,8 @@ The winner:  **Agrona**, from Martin Thompson, of Aeron fame
 
 - "Agrona", library is the winner:  
     https://github.com/real-logic/Agrona
-- Single Producer, Single Consumer (SPSC), has nearly the highest throughput!  Beating out, using multiple threads.
-- Follow up:  What does Agrona tell us about, Java and our chip speed, for the operations? (how fast is the machine L1/L2, based on this test)
+- Single Producer, Single Consumer (SPSC), has the highest throughput!  Beating out, using multiple threads.
+- Follow up question:  What does Agrona tell us about, Java and our chip speed, for the operations? (how fast is the machine L1/L2, based on this test)
 
 ### More findings
 
