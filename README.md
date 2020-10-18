@@ -9,13 +9,16 @@ needs only 'mvn' and java in your path to run
 
 ----
 
-This harness explores Java Queue performance,
-with basic priority rules, for four types of messages.
+This test harness explores Java concurrent Queues, implementation performance.
+
+As well, basic message priorities are handled.
+
+In this harness, there are four priority levels of the messages.
 
 1.  Management message:  urgent / low
 2.  Normal Priority:  urgent / low
 
-Queues are necessary for 'sequential problems.'
+Concurrent Queues are necessary for 'sequential problems.'
 
 Sequential processing is the most common type of message processing,
 because message *fairness* is almost always a requirement.
@@ -26,9 +29,9 @@ We show the JDK queues are typically half the speed
 - Agrona (Martin Thompson, Aeron)
 - JCTools (Apache)
 
-The JDK ConcurrentLinkedQueue shows it is great for general purpose work,
+The JDK ConcurrentLinkedQueue proves it is great for general purpose work,
 as it can outperform in very high concurrency scenarios; however, 
-these are uncommon in practice.
+high levels of concurrency are rarely observed.  
 
 ## Code review
 
