@@ -11,16 +11,17 @@ needs only 'mvn' and java in your path to run
 
 This harness explores Java Queue performance,
 with basic priority rules, for four types of messages.
-1.  High Priority:  urgent / normal
-2.  Normal Priority:  urgent / normal
 
-Queues are important for so called 'sequential problems.'
+1.  Management message:  urgent / low
+2.  Normal Priority:  urgent / low
+
+Queues are necessary for 'sequential problems.'
 
 Sequential processing is the most common type of message processing,
-because message 'fairness' is almost always a requirement.
+because message *fairness* is almost always a requirement.
 
-We show the JDK queues are typically hafl the speed, of ring-buffer based
-approaches from two libraries using unsafe and ring-buffers:
+We show the JDK queues are typically half the speed
+ of two libraries using unsafe and ring-buffer techniques:
 
 - Agrona (Martin Thompson, Aeron)
 - JCTools (Apache)
@@ -56,15 +57,6 @@ inventor of 'Byzantine Generals' and other concurrent theory:
 - e.g. Single Producer Single Consumer (SPSC)
 - e.g. Multiple Producer Single consumer (MPSC)
 
-## My solution
-
-To explore Java Queue performance:
-
-Performance tests are the right way to evaluate, which is the fastest.
-With a complex interaction of software, L1/L2 caches and the chip, it is too easy to make a mistake reasoning, about performance.
-Performance may also change depending on the hardware you are running on,
-but the results are typically stable across machines.
-
 ### Results
 
 The fastest queues are ring buffers, using transactional memory.
@@ -99,6 +91,15 @@ Useful blog articles:
 - http://psy-lob-saw.blogspot.com/2013/03/single-producerconsumer-lock-free-queue.html
 - http://psy-lob-saw.blogspot.com/p/lock-free-queues.html
 - https://psy-lob-saw.blogspot.com/2015/01/mpmc-multi-multi-queue-vs-clq.html
+
+## My solution
+
+To explore Java Queue performance:
+
+Performance tests are the right way to evaluate, which is the fastest.
+With a complex interaction of software, L1/L2 caches and the chip, it is too easy to make a mistake reasoning, about performance.
+Performance may also change depending on the hardware you are running on,
+but the results are typically stable across machines.
 
 ## Notes on Priority messaging
 
