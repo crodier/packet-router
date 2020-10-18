@@ -30,36 +30,6 @@ public class TestPacketRouter {
         }
     }
 
-    @Test
-    public void testStringBuffer() {
-        int chris = 1;
-//        synchronized (chris) {
-//
-//        }
-        // above doesn't compile, must synchronize on an object
-        StringBuffer sb = new StringBuffer("abcdef");
-        StringBuffer sb2 = sb.insert(3, "c");
-        Assert.assertEquals(sb, sb2);
-
-        Drink[] drinks = new Drink[2];
-        // no effect, the array is passed by reference
-        stirDrinks(drinks[0]);
-        System.out.println("0:"+drinks[0]+", 1: "+drinks[1]);
-    }
-
-    private static abstract class Chris {
-        final void go() {
-            // works
-        }
-    }
-
-    public void stirDrinks(Drink drink) {
-        if (drink == null)
-            drink = new Drink();
-        drink.olives++;
-
-    }
-
     public void testPacketOrderingBackwards(PacketRouter packetRouter) {
 
         for (int i=0; i<10; i++) {

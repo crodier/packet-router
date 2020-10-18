@@ -6,7 +6,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class PriorityBlockingQueuePacketRouter implements PacketRouter {
 
-    // probably should code it both ways, with above, and a priority queue with CAS, see which is faster
+    // TODO: could try with CAS
+    //  and make my own blocking queue, not Java's lock based
     PriorityBlockingQueue<Packet> pq = new PriorityBlockingQueue<>();
 
     AtomicLong packetCounter = new AtomicLong(0);

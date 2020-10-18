@@ -19,7 +19,7 @@ import static producerconsumer.router.JCToolsPacketRouter.QueueType.SPSC;
  *
  * Test different packet router implementations.
  *
- * JCTools aims to be the missing fast threaded queues library in Java.
+ * Agrona, JCTools aims to be the missing fast threaded queues library in Java.
  */
 public class PerformanceTest {
 

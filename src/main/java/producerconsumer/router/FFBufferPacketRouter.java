@@ -9,11 +9,7 @@ import producerconsumer.router.wait.WaitStrategy;
 import java.util.Queue;
 
 /**
- * https://github.com/real-logic/Agrona
- *
- * Like JCTools, another crack at Leslie Lamport Queues
- *
- * From Martin Thomson, finance.
+ * TODO:  Implement our own using FF Buffer
  */
 public class FFBufferPacketRouter extends QueuePacketRouter implements PacketRouter {
 

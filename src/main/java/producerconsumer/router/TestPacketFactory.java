@@ -43,7 +43,13 @@ public class TestPacketFactory {
         return cachedList;
     }
 
-
+    /**
+     * Note: a smart way to test; randomize the inputs!
+     * With threading, random testing, often uncovers, unforeseen results.
+     *
+     * @param size number of packets
+     * @return the packets we want routed
+     */
     static ArrayList<Packet> makeRandomDistribution(int size)
     {
 
@@ -52,7 +58,6 @@ public class TestPacketFactory {
         int user = 0;
         int userLarge = 0;
 
-        // could do better, but ok.  Nice property that you end up with none for any given type a fair amount.
         double runningTotal = 0;
         double pickMgmtLarge = new Random(System.currentTimeMillis()).nextDouble() * size;
         runningTotal += pickMgmtLarge;
