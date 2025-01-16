@@ -123,8 +123,10 @@ But a priority queue,
 Checking each Queue, instead of popping the top of a PriorityQueue, is more work for the readers;
 however, the four queues, interestingly, reduces locking, blocking, and reduces the lock contention
 by distributing against multiple Queues instead of, contending for one.
-The reduction in a single point of contention dominates 
-the performance vs. doing a few more operations with less contention.
+
+Avoiding a single point of contention 
+ultimately dominates the cost of
+doing a few more operations with less contention.
 
 ## Building and Running
 
