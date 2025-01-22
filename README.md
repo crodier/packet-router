@@ -9,7 +9,7 @@ for concurrent queue operations.
 
 A broader conclusion can be drawn regarding modern CPU architecture.
 
-Single threaded handoffs on mondern CPUs are the fastest way for threads
+Single threaded handoffs on modern CPUs are the fastest way for threads
 to communicate.
 
 ### How to run / reproduce
@@ -17,6 +17,10 @@ to communicate.
 **./runPerfTest.sh**
 
 needs only 'mvn' and java in your path to run
+
+![Results screenshot](./desktopResults.png)
+
+Note the Agrona SPSC results, at almost **20x** the Java Priority Queue.
 
 ### Sample results
 [perftest_laptop.txt](https://github.com/crodier/packet-router/blob/master/perftest_laptop.txt)
