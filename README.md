@@ -1,11 +1,32 @@
-# Packet Router Problem
+# Packet Router Problem - a Java concurrency study
+
+### Conclusions
+
+The main conclusion is most java systems should be using Agrona
+for concurrent queue operations.
+
+[Agrona SPSC](https://github.com/real-logic/agrona) can run more than 10x the speed of the Java Concurent Queues.
+
+A broader conclusion can be drawn regarding modern CPU architecture.
+
+Single threaded handoffs on mondern CPUs are the fastest way for threads
+to communicate.
+
+### How to run / reproduce
 
 **./runPerfTest.sh**
 
 needs only 'mvn' and java in your path to run
 
-#### Sample results
+### Sample results
 [perftest_laptop.txt](https://github.com/crodier/packet-router/blob/master/perftest_laptop.txt)
+
+## Background
+
+This problem is related to packet switching, also 
+the current CFS Linux scheduler:
+
+https://en.wikipedia.org/wiki/Run_queue
 
 ----
 
@@ -24,23 +45,15 @@ Sequential processing is the most common type of message processing,
 because message *fairness* is almost always a requirement.
 
 We show the JDK queues are typically half the speed
- of two libraries using unsafe and ring-buffer techniques:
+of two libraries using unsafe and ring-buffer techniques:
 
 - Agrona (Martin Thompson, Aeron)
 - JCTools (Apache)
 
 The JDK ConcurrentLinkedQueue proves it is great for general purpose work,
-as it can outperform in very high concurrency scenarios; however, 
-high levels of concurrency are rarely observed.  
+as it can outperform in very high concurrency scenarios; however,
+high levels of concurrency are rarely observed.
 
-## Background
-
-This problem is related to packet switching, also 
-the old Linux scheduler:
-
-https://en.wikipedia.org/wiki/Run_queue
-
-"the active array with the highest priority"
 
 ## Code review
 
@@ -65,7 +78,7 @@ inventor of 'Byzantine Generals' and other concurrent theory:
 ### Problem Summary
 - With message priorities, then, ordered
 - test the performance of Java Queues for **ordered handoff** of messages, *in-process*
-- evaluate the available java libraires, across different strategies
+- evaluate the available java libraries, across different strategies
 - e.g. Single Producer Single Consumer (SPSC)
 - e.g. Multiple Producer Single consumer (MPSC)
 
