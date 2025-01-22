@@ -2,10 +2,11 @@
 
 ### Conclusions
 
-The main conclusion is most java systems should be using Agrona
+Most java systems should be using [Agrona collections](https://github.com/real-logic/agrona)
 for concurrent queue operations.
 
-[Agrona SPSC](https://github.com/real-logic/agrona) can run more than 10x the speed of the Java Concurent Queues.
+Agrona SPSC runs more than 10x the speed of the Java Concurrent Queues
+for typical queue uses.
 
 A broader conclusion can be drawn regarding modern CPU architecture.
 
