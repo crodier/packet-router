@@ -11,7 +11,7 @@ needs only 'mvn' and java in your path to run
 
 This test harness explores Java concurrent Queues, implementation performance.
 
-As well, basic message priorities are handled.
+Message priorities are handled.
 
 In this harness, there are four priority levels of the messages.
 
@@ -32,6 +32,15 @@ We show the JDK queues are typically half the speed
 The JDK ConcurrentLinkedQueue proves it is great for general purpose work,
 as it can outperform in very high concurrency scenarios; however, 
 high levels of concurrency are rarely observed.  
+
+## Background
+
+This problem is related to packet switching, also 
+the old Linux scheduler:
+
+https://en.wikipedia.org/wiki/Run_queue
+
+"the active array with the highest priority"
 
 ## Code review
 
