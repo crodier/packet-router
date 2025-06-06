@@ -1,17 +1,43 @@
-# Packet Router Problem
+# Packet Router Problem - a Java concurrency study
+
+### Conclusions
+
+Most java systems should be using [Agrona collections](https://github.com/real-logic/agrona)
+for concurrent queue operations.
+
+Agrona SPSC runs more than 10x the speed of the Java Concurrent Queues
+for typical queue uses.
+
+A broader conclusion can be drawn regarding modern CPU architecture.
+
+Single threaded handoffs on modern CPUs are the fastest way for threads
+to communicate.
+
+### How to run / reproduce
 
 **./runPerfTest.sh**
 
 needs only 'mvn' and java in your path to run
 
-#### Sample results
+![Results screenshot](./desktopResults.png)
+
+Note the Agrona SPSC results, at almost **20x** the Java Priority Queue.
+
+### Sample results
 [perftest_laptop.txt](https://github.com/crodier/packet-router/blob/master/perftest_laptop.txt)
+
+## Background
+
+This problem is related to packet switching, also 
+the current CFS Linux scheduler:
+
+https://en.wikipedia.org/wiki/Run_queue
 
 ----
 
 This test harness explores Java concurrent Queues, implementation performance.
 
-As well, basic message priorities are handled.
+Message priorities are handled.
 
 In this harness, there are four priority levels of the messages.
 
@@ -24,14 +50,15 @@ Sequential processing is the most common type of message processing,
 because message *fairness* is almost always a requirement.
 
 We show the JDK queues are typically half the speed
- of two libraries using unsafe and ring-buffer techniques:
+of two libraries using unsafe and ring-buffer techniques:
 
 - Agrona (Martin Thompson, Aeron)
 - JCTools (Apache)
 
 The JDK ConcurrentLinkedQueue proves it is great for general purpose work,
-as it can outperform in very high concurrency scenarios; however, 
-high levels of concurrency are rarely observed.  
+as it can outperform in very high concurrency scenarios; however,
+high levels of concurrency are rarely observed.
+
 
 ## Code review
 
@@ -56,7 +83,7 @@ inventor of 'Byzantine Generals' and other concurrent theory:
 ### Problem Summary
 - With message priorities, then, ordered
 - test the performance of Java Queues for **ordered handoff** of messages, *in-process*
-- evaluate the available java libraires, across different strategies
+- evaluate the available java libraries, across different strategies
 - e.g. Single Producer Single Consumer (SPSC)
 - e.g. Multiple Producer Single consumer (MPSC)
 
@@ -124,9 +151,10 @@ Checking each Queue, instead of popping the top of a PriorityQueue, is more work
 however, the four queues, interestingly, reduces locking, blocking, and reduces the lock contention
 by distributing against multiple Queues instead of, contending for one.
 
-Avoiding a single point of contention 
-ultimately dominates the cost of
-doing a few more operations with less contention.
+By using multiple queues, we reduce contention.
+
+The reduction in contention dominates 
+the performance.  (the most important takeaway of the experiment!)
 
 ## Building and Running
 
